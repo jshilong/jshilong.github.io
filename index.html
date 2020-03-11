@@ -130,8 +130,8 @@
               </a>
 
               <br>
-              <font color="black"> We try to build a detector to detects anomaly behavior of chiefs in kitchens. Algorithmic solution is composed by two phases: object detection with high recall which detects human heads and body and classification which classifys if the behavior is anomalous. In the latest release, 
-                object solution phase achieves 5-times faster inference than previous releases and all associated computation can be done one client device.</font>
+              <font color="black"> We try to build a detector to detects anomaly behavior of chiefs in kitchens. Algorithmic solution is composed by two phases: object detection with high recall which detects human heads and body and classification which classifys if the behavior is anomalous. 
+                We reproduce the   <a href="https://arxiv.org/abs/1903.00621">FSAF</a> and combine with  <a href="https://arxiv.org/abs/1909.02466"> FreeAnchor</a> to  better deal with occlusion case.</font>
               <br>
               </p>
               <!-- <div class="paper" id="xie2020advprop">
@@ -150,12 +150,14 @@
           </td>
           <td width="75%" valign="middle">
               <p>
-                <b>               <papertitle>SenseRadar</papertitle> </b>
+                <b>               <papertitle>Sense Radar</papertitle> </b>
               </a>
       
               <br>
               <font color="black">
-                  We proposed a  Sampling-Free mechanism, which is fully data diagnostic and thus avoids the laborious tuning of sampling hyper-parameters.</font>
+                This is originally a problem of image classification. The requirement is to distinguish whether there are guns and dangerous goods in the image.
+                But turning it into a detection problem makes network easier to learn
+                  .</font>
               <br>
               </p>
               <!-- <div class="paper" id="xie2020advprop">
@@ -167,8 +169,44 @@
               </div> -->
           </td>
       </tr> <!--xie2020advprop-->
+
+
+
+      <tr bgcolor="#ffffff">
+        <td style="padding:20px;width:30%;vertical-align:middle">
+            <img src='images/person.png' width="200"， height= "150" >  </div>
+        </td>
+        <td width="75%" valign="middle">
+            <p>
+              <b>               <papertitle>Person Detector(In process)</papertitle> </b>
+            </a>
+    
+            <br>
+            <font color="black">
+              In order to provide an excellent pre-train model for various human or face tasks,
+              I have collected many open source datasets related to body and face to train a high performance detector.
+              In this project, I implemented the algorithm called <a href=https://zhuanlan.zhihu.com/p/73162940?utm_source=wechat_session&utm_medium=social&utm_oi=659344454985584640> Groupsoftmax</a>, 
+              which could union data sets of different annotation categories . Thanks to luobe chen.
+               I've also learned some techniques for dealing with crowded people.
+                .</font>
+            <br>
+            </p>
+            <!-- <div class="paper" id="xie2020advprop">
+                <a href="https://arxiv.org/pdf/1911.09665.pdf">arxiv</a> /
+                <a href="https://github.com/tensorflow/tpu/tree/master/models/official/efficientnet">project page</a> /
+                <a href="https://medium.com/syncedreview/google-johns-hopkins-university-can-adversarial-examples-improve-image-recognition-bcb7254e2d8">press</a> /
+                <a href="https://www.youtube.com/watch?v=KTCztkNJm50">video</a> /
+                <a href="data/xie2020advprop.bib">bibtex</a>
+            </div> -->
+        </td>
+    </tr> <!--xie2020advprop-->
+
+
+
+
     </tbody></table>
     <hr>
+    
     
 
     
