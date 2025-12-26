@@ -585,50 +585,9 @@ a:focus {
     text-align: right;
 }
 
-.footer__stats {
-    display: grid;
-    grid-auto-flow: column;
-    grid-auto-columns: minmax(120px, auto);
-    gap: 14px;
-    justify-content: end;
-}
-
-.stat {
-    padding: 10px 12px;
-    border-radius: 14px;
-    border: 1px solid var(--hairline);
-    background: rgba(255, 255, 255, 0.55);
-    box-shadow: var(--glow);
-    min-width: 120px;
-}
-
-@media (prefers-color-scheme: dark) {
-    .stat {
-        background: rgba(255, 255, 255, 0.06);
-    }
-}
-
-.stat__label {
-    font-size: 12px;
-    color: var(--muted);
-    letter-spacing: -0.01em;
-}
-
-.stat__value {
-    margin-top: 4px;
-    font-size: 22px;
-    font-weight: 800;
-    letter-spacing: -0.03em;
-}
-
 @media (max-width: 680px) {
     .footer {
         grid-template-columns: 1fr;
-    }
-
-    .footer__stats {
-        justify-content: start;
-        grid-auto-flow: row;
     }
 }
 

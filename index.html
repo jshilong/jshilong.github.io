@@ -175,7 +175,7 @@
                 generation/editing</b> within a single model backbone.
             </p>
             <div class="pub__links">
-              <a class="chip" href="https://arxiv.org/abs/2512.17909">arXiv</a>
+              <a class="chip" href="https://arxiv.org/abs/2512.17909">Paper</a>
               <a class="chip" href="https://jshilong.github.io/PS-VAE-PAGE/">Page</a>
             </div>
           </div>
@@ -200,7 +200,7 @@
               times and enhancing commercial viability.
             </p>
             <div class="pub__links">
-              <a class="chip" href="https://arxiv.org/abs/2502.05179">arXiv</a>
+              <a class="chip" href="https://arxiv.org/abs/2502.05179">Paper</a>
               <a class="chip" href="https://github.com/FoundationVision/FlashVideo">Code</a>
             </div>
           </div>
@@ -222,7 +222,7 @@
               the fly by providing one or a few reference face images and a text prompt.
             </p>
             <div class="pub__links">
-              <a class="chip" href="https://arxiv.org/abs/2403.17008">arXiv</a>
+              <a class="chip" href="https://arxiv.org/abs/2403.17008">Paper</a>
               <a class="chip" href="https://github.com/ali-vilab/FlashFace">Code</a>
             </div>
           </div>
@@ -243,7 +243,7 @@
             <p class="pub__desc">We present a vision and language model named GPT4RoI to do region-level image
               understanding.</p>
             <div class="pub__links">
-              <a class="chip" href="https://arxiv.org/abs/2307.03601">arXiv</a>
+              <a class="chip" href="https://arxiv.org/abs/2307.03601">Paper</a>
               <a class="chip" href="https://github.com/jshilong/GPT4RoI">Code</a>
             </div>
           </div>
@@ -264,7 +264,7 @@
             <p class="pub__desc">We present a vision and language model named MultiModal-GPT to conduct multi-round
               dialogue with humans.</p>
             <div class="pub__links">
-              <a class="chip" href="https://arxiv.org/abs/2305.04790">arXiv</a>
+              <a class="chip" href="https://arxiv.org/abs/2305.04790">Paper</a>
               <a class="chip" href="https://github.com/open-mmlab/Multimodal-GPT">Code</a>
             </div>
           </div>
@@ -284,7 +284,7 @@
             <p class="pub__desc">DDQ-DETR achieves 52.1 AP on MS-COCO dataset within 12 epochs using a ResNet-50
               backbone, outperforming all existing detectors in the same setting.</p>
             <div class="pub__links">
-              <a class="chip" href="https://arxiv.org/abs/2303.12776">arXiv</a>
+              <a class="chip" href="https://arxiv.org/abs/2303.12776">Paper</a>
               <a class="chip" href="https://github.com/jshilong/DDQ">Code</a>
             </div>
           </div>
@@ -307,7 +307,7 @@
               significantly outperforms the prior method Point DETR by 3.9 mAP with 5% well-labeled images.
             </p>
             <div class="pub__links">
-              <a class="chip" href="https://arxiv.org/abs/2205.05920">arXiv</a>
+              <a class="chip" href="https://arxiv.org/abs/2205.05920">Paper</a>
               <a class="chip" href="https://github.com/jshilong/GroupRCNN">Code</a>
             </div>
           </div>
@@ -325,7 +325,7 @@
             <div class="pub__meta"><em>ICML 2021 (* Equal contribution)</em></div>
             <p class="pub__desc">We present a general channel pruning framework for complicated structures.</p>
             <div class="pub__links">
-              <a class="chip" href="https://arxiv.org/abs/2108.00708">arXiv</a>
+              <a class="chip" href="https://arxiv.org/abs/2108.00708">Paper</a>
               <a class="chip" href="https://github.com/jshilong/FisherPruning.git">Code</a>
             </div>
           </div>
@@ -348,7 +348,7 @@
               detection with negligible inference time.
             </p>
             <div class="pub__links">
-              <a class="chip" href="https://arxiv.org/abs/2005.03101">arXiv</a>
+              <a class="chip" href="https://arxiv.org/abs/2005.03101">Paper</a>
               <a class="chip" href="https://github.com/jshilong/SEPC">Code</a>
             </div>
           </div>
@@ -361,68 +361,8 @@
                     <script type="text/javascript" id="clustrmaps"
                         src="//cdn.clustrmaps.com/map_v2.js?d=YhKG6U66qGxhpkw9wNq2inR7zEgWsQgm_B10AAnjACw&cl=ffffff&w=a"></script>
       </div>
-      <div class="footer__right">
-        <div class="footer__stats" aria-label="site stats">
-          <div class="stat">
-            <div class="stat__label">This week</div>
-            <div class="stat__value" id="weeklyVisits">—</div>
-          </div>
-          <div class="stat">
-            <div class="stat__label">All time</div>
-            <div class="stat__value" id="totalVisits">—</div>
-          </div>
-        </div>
-      </div>
     </footer>
   </main>
-
-  <script>
-    // Lightweight counters (no backend needed). Uses CountAPI and localStorage to avoid double counting refreshes.
-    (function () {
-      const weeklyEl = document.getElementById('weeklyVisits');
-      const totalEl = document.getElementById('totalVisits');
-      if (!weeklyEl || !totalEl) return;
-
-      const NAMESPACE = 'jshilong.github.io';
-      const TOTAL_KEY = 'home-total';
-
-      function isoWeek(date) {
-        const d = new Date(Date.UTC(date.getFullYear(), date.getMonth(), date.getDate()));
-        const day = d.getUTCDay() || 7;
-        d.setUTCDate(d.getUTCDate() + 4 - day);
-        const yearStart = new Date(Date.UTC(d.getUTCFullYear(), 0, 1));
-        const weekNo = Math.ceil((((d - yearStart) / 86400000) + 1) / 7);
-        return { year: d.getUTCFullYear(), week: weekNo };
-      }
-
-      const now = new Date();
-      const w = isoWeek(now);
-      const WEEK_KEY = `home-week-${w.year}-W${String(w.week).padStart(2, '0')}`;
-      const todayKey = `${now.getFullYear()}-${String(now.getMonth() + 1).padStart(2, '0')}-${String(now.getDate()).padStart(2, '0')}`;
-
-      async function countOrGet(key, dedupeId) {
-        const hitUrl = `https://api.countapi.xyz/hit/${encodeURIComponent(NAMESPACE)}/${encodeURIComponent(key)}`;
-        const getUrl = `https://api.countapi.xyz/get/${encodeURIComponent(NAMESPACE)}/${encodeURIComponent(key)}`;
-        const dedupeKey = `counted:${NAMESPACE}:${dedupeId}`;
-        const shouldHit = !localStorage.getItem(dedupeKey);
-        const url = shouldHit ? hitUrl : getUrl;
-        const res = await fetch(url, { cache: 'no-store' });
-        const data = await res.json();
-        if (shouldHit) localStorage.setItem(dedupeKey, '1');
-        return typeof data.value === 'number' ? data.value : null;
-      }
-
-      Promise.allSettled([
-        countOrGet(WEEK_KEY, `week:${WEEK_KEY}`),
-        countOrGet(TOTAL_KEY, `day:${TOTAL_KEY}:${todayKey}`),
-      ]).then((results) => {
-        const weekVal = results[0].status === 'fulfilled' ? results[0].value : null;
-        const totalVal = results[1].status === 'fulfilled' ? results[1].value : null;
-        if (typeof weekVal === 'number') weeklyEl.textContent = String(weekVal);
-        if (typeof totalVal === 'number') totalEl.textContent = String(totalVal);
-      }).catch(() => { });
-    })();
-  </script>
 
   <script>
     // Show GitHub stars on "Code" links and selected GitHub repos (data-ghrepo).
