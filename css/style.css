@@ -310,6 +310,51 @@ a:focus {
     margin-bottom: 0;
 }
 
+.logoRow {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.logoRow__item {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px 12px;
+    border-radius: 999px;
+    border: 1px solid var(--hairline);
+    background: rgba(255, 255, 255, 0.70);
+    box-shadow: var(--glow);
+    transition: transform 160ms ease, background 160ms ease, filter 160ms ease;
+}
+
+.logoRow__item img {
+    height: 22px;
+    width: auto;
+    max-width: 140px;
+    object-fit: contain;
+    /* Keep original brand colors by default. */
+    filter: none;
+}
+
+.logoRow__item:hover {
+    transform: translateY(-1px);
+    background: rgba(255, 255, 255, 0.86);
+}
+
+.logoRow__item:hover img {
+    filter: saturate(1.05) contrast(1.02);
+}
+
+@media (prefers-color-scheme: dark) {
+    /* Keep logos readable in dark mode even if the assets are dark-colored. */
+    .logoRow__item {
+        background: rgba(255, 255, 255, 0.92);
+    }
+}
+
 .research__cta {
     margin: 14px 0 0 0;
     color: var(--text);
