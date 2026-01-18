@@ -148,9 +148,24 @@ a:focus {
 }
 
 .hero__nameZh {
-    font-weight: 600;
-    font-size: 0.68em;
+    /* Brush-style Chinese name */
+    /* Prefer legibility: use readable brush/kaiti by default. */
+    font-family: "Ma Shan Zheng", "STKaiti", "Kaiti SC", "KaiTi", "Songti SC", serif;
+    font-weight: 400;
+    font-size: 0.92em;
     color: var(--muted);
+    letter-spacing: 0.02em;
+    margin-left: 6px;
+    display: inline-block;
+    transform: translateY(2px);
+    /* Keep it clean: no highlight background. */
+    text-shadow: 0 1px 0 rgba(0, 0, 0, 0.06);
+}
+
+@media (prefers-color-scheme: dark) {
+    .hero__nameZh {
+        text-shadow: 0 1px 0 rgba(0, 0, 0, 0.45);
+    }
 }
 
 .prose p {
@@ -369,8 +384,9 @@ a:focus {
     padding: 10px 14px;
     border-radius: 999px;
     border: 1px solid var(--hairline);
-    background: rgba(0, 0, 0, 0.88);
-    color: rgba(255, 255, 255, 0.92);
+    /* Primary button (subtle, not a solid brand color) */
+    background: rgba(0, 0, 0, 0.08);
+    color: var(--text);
     font-weight: 700;
     font-size: 13px;
     letter-spacing: -0.01em;
@@ -380,8 +396,8 @@ a:focus {
 
 @media (prefers-color-scheme: dark) {
     .btn {
-        /* Remove the stark white fill in dark mode; keep a glassy, Apple-like pill. */
-        background: rgba(255, 255, 255, 0.10);
+        /* Keep a readable primary in dark mode. */
+        background: rgba(255, 255, 255, 0.12);
         color: rgba(255, 255, 255, 0.92);
         box-shadow: 0 10px 22px rgba(0, 0, 0, 0.38);
     }
@@ -391,6 +407,12 @@ a:focus {
     transform: translateY(-1px);
     filter: brightness(1.02);
     box-shadow: 0 16px 34px rgba(0, 0, 0, 0.18);
+}
+
+@media (prefers-color-scheme: light) {
+    .btn:hover {
+        background: rgba(0, 0, 0, 0.11);
+    }
 }
 
 .btn--ghost {
@@ -571,11 +593,7 @@ a:focus {
     white-space: nowrap;
 }
 
-@media (prefers-color-scheme: dark) {
-    .pub__authors .author-me {
-        /* keep consistent in dark mode */
-    }
-}
+/* .pub__authors .author-me stays consistent in both light/dark themes via variables. */
 
 .pub__meta {
     font-size: 12.5px;
@@ -610,17 +628,159 @@ a:focus {
 /* Footer */
 .footer {
     margin-top: 18px;
-    padding: 18px 22px;
+    padding: 0;
     border: 1px solid var(--hairline);
     border-radius: var(--radius);
     background: linear-gradient(180deg, var(--surface-strong), var(--surface));
     backdrop-filter: blur(14px);
     -webkit-backdrop-filter: blur(14px);
     box-shadow: var(--shadow-2);
+    display: flex;
+    justify-content: center;
+}
+
+/* ClustrMaps wrapper + overlay (total is from our own JSON file, not scraped client-side). */
+.clustrmapsWrap {
+    position: relative;
+    overflow: hidden;
+    border-radius: var(--radius);
+    width: 100%;
+    margin: 0 auto;
+    height: min(420px, 52vh);
+}
+
+.clustrmapsWrap #clustrmapsMount {
+    display: flex;
+    justify-content: center;
+}
+
+/* ClustrMaps injects an <a> wrapper; center it to avoid left-anchored rendering. */
+.clustrmapsWrap #clustrmapsMount > a {
+    display: block;
+    margin: 0 auto;
+}
+
+.clustrmapsWrap #clustrmapsMount #clustrmaps-widget-v2 {
+    background: transparent !important;
+    width: 100%;
+}
+
+.clustrmapsWrap #clustrmapsMount .clustrmaps-map {
+    margin: 0 auto;
+    width: 100%;
+}
+
+/* Remove ClustrMaps injected "white background block" and keep only the actual map. */
+.clustrmapsWrap #clustrmapsMount .clustrmaps-map-container {
+    /* Ensure we never see a blank white slab even if the SVG hasn't painted yet. */
+    background: #2B77AC !important;
+    background-image: none !important;
+    height: 100%;
+    width: 100%;
+}
+
+.clustrmapsWrap #clustrmapsMount .clustrmaps-map {
+    height: 100%;
+}
+
+.clustrmapsWrap #clustrmapsMount .jvectormap-container {
+    height: 100% !important;
+}
+
+.clustrmapsWrap #clustrmapsMount .jvectormap-container svg {
+    height: 100% !important;
+}
+
+/* Hide the injected background image layer (e.g. .../generated_content/backs/bg-w_...-cl_ffffff.png). */
+.clustrmapsWrap #clustrmapsMount img[src*="generated_content/backs/"] {
+    display: none !important;
+}
+
+/* Hide the extra injected UI (e.g. "ClustrMaps People Search") while keeping the map container. */
+.clustrmapsWrap #clustrmapsMount #clustrmaps-widget-v2 > div:not(.clustrmaps-map-container) {
+    display: none !important;
+}
+
+.clustrmapsOverlay {
+    pointer-events: none;
+    position: absolute;
+    right: 16px;
+    top: 14px;
+    left: auto;
+    transform: none;
+    text-align: center;
+    line-height: 1.12;
+    padding: 8px 10px;
+    border-radius: 14px;
+    border: 1px solid rgba(255, 255, 255, 0.28);
+    background: rgba(0, 0, 0, 0.26);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    color: rgba(255, 255, 255, 0.95);
+    text-shadow: 0 1px 0 rgba(0, 0, 0, 0.38);
+    box-shadow: 0 18px 46px rgba(0, 0, 0, 0.20);
+    width: min(360px, 20%);
+    max-width: calc(100% - 24px);
+}
+
+/* On small screens, keep the overlay centered to avoid covering too much of the map. */
+@media (max-width: 700px) {
+    .clustrmapsOverlay {
+        left: 50%;
+        right: auto;
+        transform: translateX(-50%);
+    }
+}
+
+.clustrmapsOverlay__title {
+    font-size: 11px;
+    font-weight: 900;
+    letter-spacing: 0.10em;
+    text-transform: uppercase;
+    opacity: 0.92;
+}
+
+.clustrmapsOverlay__grid {
     display: grid;
-    grid-template-columns: 1fr auto;
-    gap: 14px;
-    align-items: center;
+    grid-template-columns: 1fr;
+    gap: 8px;
+    margin-top: 8px;
+    min-width: auto;
+}
+
+.clustrmapsOverlay__metric {
+    padding: 8px 9px;
+    border-radius: 14px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    background: rgba(255, 255, 255, 0.06);
+}
+
+.clustrmapsOverlay__kicker {
+    font-size: 11px;
+    font-weight: 800;
+    opacity: 0.90;
+    letter-spacing: 0.02em;
+}
+
+.clustrmapsOverlay__value {
+    margin-top: 6px;
+    font-size: 20px;
+    font-weight: 950;
+    letter-spacing: -0.02em;
+}
+
+.clustrmapsOverlay__sub {
+    margin-top: 6px;
+    font-size: 11px;
+    font-weight: 750;
+    opacity: 0.88;
+}
+
+@media (max-width: 560px) {
+    .clustrmapsOverlay__grid {
+        grid-template-columns: 1fr;
+        min-width: auto;
+    }
 }
 
 .footer__credit {
@@ -628,12 +788,6 @@ a:focus {
     color: var(--muted);
     font-size: 13px;
     text-align: right;
-}
-
-@media (max-width: 680px) {
-    .footer {
-        grid-template-columns: 1fr;
-    }
 }
 
 /* Respect users who prefer reduced motion. */
