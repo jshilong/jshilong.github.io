@@ -28,7 +28,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Liu+Jian+Mao+Cao&family=Ma+Shan+Zheng&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" type="text/css" href="stylesheet.css?v=20260118-6">
-  <link rel="stylesheet" type="text/css" href="css/style.css?v=20260118-6">
+  <link rel="stylesheet" type="text/css" href="css/style.css?v=20260118-10">
     <!-- <link rel="icon" type="image/png" href="images/JHU_icon.jpg"> -->
 </head>
 
@@ -44,6 +44,10 @@
             <a href="http://luoping.me/">Prof. Ping Luo</a>. Previously, he worked with <a href="http://chenkai.site/">Kai Chen</a> and contributed as a core developer to
             <a href="https://github.com/open-mmlab/mmdetection" data-ghrepo="open-mmlab/mmdetection">MMDetection</a> and
             <a href="https://github.com/open-mmlab/mmcv" data-ghrepo="open-mmlab/mmcv">MMCV</a>.
+          </p>
+          <p>
+            During his Ph.D., he has collaborated broadly with industry teams, including Alibaba Wan, ByteDance
+            Monetization and Seed, Adobe Research, and Meta.
           </p>
           <p>
             He completed his Bachelor's degree from the <a href="https://www.ustc.edu.cn">University of Science and
@@ -84,7 +88,8 @@
             <div class="timeline__time">2020–2023 · Object Detection &amp; Multimodal Understanding</div>
             <div class="timeline__body">
               <p>
-                My research began with object detection, focusing on efficient architectures and training.
+                My research began with object detection, focusing on the co-design of efficient architectures and
+                training optimization.
               </p>
               <p>
                 With the rise of large language models around 2022, I recognized that multimodal large language models
@@ -93,7 +98,7 @@
                 not genuinely enable models to learn visual knowledge.
               </p>
               <p>
-                This stage of my work was completed during my time at SenseTime and Shanghai AI Lab.
+                This stage of my work was developed in collaboration with SenseTime and Shanghai AI Lab.
               </p>
               <div class="logoRow" aria-label="Affiliations during 2020–2023">
                 <a class="logoRow__item" href="https://www.sensetime.com" target="_blank" rel="noopener noreferrer">
@@ -114,7 +119,7 @@
                 predicting visual content.
               </p>
               <p>
-                This stage of my work was completed at Alibaba Tongyi Lab and ByteDance.
+                This stage of my work was developed in collaboration with Alibaba Tongyi Lab and ByteDance.
               </p>
               <div class="logoRow" aria-label="Affiliations during 2023–2025">
                 <a class="logoRow__item" href="https://tongyi.aliyun.com/" target="_blank" rel="noopener noreferrer">
@@ -127,37 +132,33 @@
             </div>
           </li>
           <li class="timeline__item">
-            <div class="timeline__time">2025 · Unify</div>
+            <div class="timeline__time">2025–present · Unify</div>
             <div class="timeline__body">
               <p>
-                After accumulating substantial experience in generative modeling, by 2025 it became clear—to both the
-                community and myself—that understanding and generation should be unified. I therefore focus on what I
-                consider the most urgent problem in unified modeling: a single, principled visual encoder that supports
-                both understanding and generation. This led to PS-VAE, a key step toward a unified encoder enabling
-                understanding, generation, and editing within a shared representation space.
+                I try to build a unified visual representation space that is strong for understanding, friendly to
+                generation, and capable of preserving all visual information. I believe this is a key step toward an
+                elegant visual-language model for both understanding and generation.
               </p>
               <p>
-                This work was completed at Adobe Research.
+                This stage of work was developed in collaboration with Adobe Research, ByteDance Seed, and Meta.
               </p>
-              <div class="logoRow" aria-label="Affiliation during 2025">
+              <div class="logoRow" aria-label="Affiliations during 2025–2026">
                 <a class="logoRow__item" href="https://research.adobe.com/" target="_blank" rel="noopener noreferrer">
                   <img src="internships/adobe.png" alt="Adobe Research" loading="lazy" decoding="async">
                 </a>
+                <a class="logoRow__item" href="https://seed.bytedance.com/en/" target="_blank" rel="noopener noreferrer">
+                  <img src="internships/bytedance_seed.png" alt="ByteDance Seed" loading="lazy" decoding="async">
+                </a>
+                <a class="logoRow__item" href="https://about.meta.com/" target="_blank" rel="noopener noreferrer">
+                  <img class="logoRow__img--meta" src="internships/meta.svg" alt="Meta" loading="lazy" decoding="async">
+                </a>
               </div>
-            </div>
-          </li>
-          <li class="timeline__item">
-            <div class="timeline__time">Next · Video Unified Models</div>
-            <div class="timeline__body">
-              Looking forward, I believe images alone are insufficient for learning rich and grounded world knowledge,
-              and I am particularly excited about <strong>video-based unified models</strong>, which I see as a
-              potential next major leap beyond LLMs by capturing dynamics, causality, and long-term structure.
             </div>
           </li>
         </ul>
 
         <p class="research__cta">
-          If your team shares this perspective, I would be glad to connect and discuss potential collaborations.
+          If your team is interested in my work, I would be glad to connect and discuss potential collaborations.
         </p>
       </div>
     </section>
@@ -189,9 +190,9 @@
 
     <section class="section" id="publications">
       <div class="section__header">
-        <h2 class="section__title">Publications</h2>
+        <h2 class="section__title">Selected Publications</h2>
         <div class="section__note">
-          Only first-/co-first-author papers are listed. Full list: <a
+          First-/co-first-author and thesis-line work. Full list: <a
             href="https://scholar.google.com/citations?hl=zh-CN&user=s1NMu_UAAAAJ">Google Scholar</a>.
         </div>
       </div>
@@ -208,6 +209,7 @@
             </h3>
             <div class="pub__authors"><span class="author-me">Shilong Zhang</span>, He Zhang, Zhifei Zhang, Chongjian Ge, Shuchen Xue, Shaoteng
               Liu, Mengwei Ren, Soo Ye Kim, Yuqian Zhou, Qing Liu, Daniil Pakhomov, Kai Zhang, Zhe Lin, Ping Luo</div>
+            <div class="pub__meta"><em>ICML 2026</em></div>
             <p class="pub__desc">
               We systematically adapt understanding-oriented encoder features for generation/editing by jointly
               regularizing semantics and pixel reconstruction, compressing both into a compact 96-channel latent (16×16
@@ -396,6 +398,132 @@
       </div>
     </section>
 
+    <section class="section" id="collaborative-work">
+      <div class="section__header">
+        <h2 class="section__title">Selected Collaborative Work</h2>
+        <div class="section__note">Representative co-authored systems and papers</div>
+      </div>
+
+      <div class="collabList">
+        <article class="collab" data-s2paper="bcfecb076763b8cff41bc8719e7486fe759d6e62" data-citations="72">
+          <div class="collab__year">2025</div>
+          <div class="collab__body">
+            <h3 class="collab__title">
+              <a href="https://arxiv.org/abs/2502.04896">Goku: Flow Based Video Generative Foundation Models</a>
+            </h3>
+            <p class="collab__desc">
+              Joint image-video foundation model work for flow-based generation, with strong public code visibility and
+              broad community uptake.
+            </p>
+            <div class="collab__links">
+              <a class="chip" href="https://github.com/Saiyan-World/goku">Code</a>
+              <a class="chip" href="https://saiyan-world.github.io/goku/">Page</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="collab" data-s2paper="b15e6e2b1d81bc110f8fc98c3caf2e25e2512539" data-citations="730">
+          <div class="collab__year">2024</div>
+          <div class="collab__body">
+            <h3 class="collab__title">
+              <a href="https://arxiv.org/abs/2406.06525">Autoregressive Model Beats Diffusion: Llama for Scalable Image
+                Generation</a>
+            </h3>
+            <p class="collab__desc">
+              A high-impact open-source direction showing that next-token prediction can scale to image generation with
+              the right tokenizer and architecture choices.
+            </p>
+            <div class="collab__links">
+              <a class="chip" href="https://github.com/FoundationVision/LlamaGen">Code</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="collab" data-s2paper="ee7f769a73a533a871cd5fd9cd566d96a3f09107" data-citations="70">
+          <div class="collab__year">2024</div>
+          <div class="collab__body">
+            <h3 class="collab__title">
+              <a href="https://arxiv.org/abs/2406.07547">Zero-shot Image Editing with Reference Imitation</a>
+            </h3>
+            <p class="collab__desc">
+              MimicBrush reframes image editing around visual references, letting users specify style, identity, and
+              local detail through examples rather than text alone.
+            </p>
+            <div class="collab__links">
+              <a class="chip" href="https://github.com/ali-vilab/MimicBrush">Code</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="collab" data-s2paper="619a3118436ae6d1d435c6322e855eefb41d1ffc" data-citations="57">
+          <div class="collab__year">2025</div>
+          <div class="collab__body">
+            <h3 class="collab__title">
+              <a href="https://arxiv.org/abs/2504.07963">PixelFlow: Pixel-Space Generative Models with Flow</a>
+            </h3>
+            <p class="collab__desc">
+              Pixel-space flow generation that questions whether image generation must depend on a pretrained VAE
+              bottleneck.
+            </p>
+            <div class="collab__links">
+              <a class="chip" href="https://github.com/ShoufaChen/PixelFlow">Code</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="collab" data-s2paper="72d702e7e290c5a3223c42342e54f1b3e5dbf526" data-citations="34">
+          <div class="collab__year">2025</div>
+          <div class="collab__body">
+            <h3 class="collab__title">
+              <a href="https://arxiv.org/abs/2509.25050">Advantage Weighted Matching: Aligning RL with Pretraining in
+                Diffusion Models</a>
+            </h3>
+            <p class="collab__desc">
+              Aligns diffusion post-training with the pretraining objective through advantage-weighted matching rather
+              than a separate noisy RL objective.
+            </p>
+            <div class="collab__links">
+              <a class="chip" href="https://github.com/scxue/advantage_weighted_matching">Code</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="collab" data-s2paper="99ccc15094b9438448668d136d90a12e0c9443e1" data-citations="811">
+          <div class="collab__year">2022</div>
+          <div class="collab__body">
+            <h3 class="collab__title">
+              <a href="https://arxiv.org/abs/2212.07784">RTMDet: An Empirical Study of Designing Real-Time Object
+                Detectors</a>
+            </h3>
+            <p class="collab__desc">
+              Practical real-time detection system study across architecture, label assignment, augmentation,
+              optimization, and task extensions.
+            </p>
+            <div class="collab__links">
+              <a class="chip" href="https://github.com/open-mmlab/mmdetection/tree/main/configs/rtmdet"
+                data-ghrepo="open-mmlab/mmdetection">Code</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="collab" data-s2paper="9ad6f2141a433ba13a43272d666dc3609198dd91" data-citations="108">
+          <div class="collab__year">2023</div>
+          <div class="collab__body">
+            <h3 class="collab__title">
+              <a href="https://openaccess.thecvf.com/content/CVPR2023/html/Wang_Consistent-Teacher_Towards_Reducing_Inconsistent_Pseudo-Targets_in_Semi-Supervised_Object_Detection_CVPR_2023_paper.html">Consistent-Teacher:
+                Towards Reducing Inconsistent Pseudo-Targets in Semi-Supervised Object Detection</a>
+            </h3>
+            <p class="collab__desc">
+              CVPR Highlight work on stabilizing pseudo supervision in semi-supervised object detection.
+            </p>
+            <div class="collab__links">
+              <a class="chip" href="https://github.com/Adamdad/ConsistentTeacher">Code</a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
     <footer class="footer">
       <div class="clustrmapsWrap" id="clustrmapsWrap">
         <div class="footer__left" id="clustrmapsMount" aria-hidden="true">
@@ -405,7 +533,7 @@
         <div class="clustrmapsOverlay" id="clustrmapsOverlay" aria-hidden="true">
           <div class="clustrmapsOverlay__title">Pageviews</div>
           <div class="clustrmapsOverlay__grid">
-            <div class="clustrmapsOverlay__metric">
+            <div class="clustrmapsOverlay__metric" id="pageviews30dMetric">
               <div class="clustrmapsOverlay__kicker">Last 30 days</div>
               <div class="clustrmapsOverlay__value" id="pageviews30d">—</div>
               <div class="clustrmapsOverlay__sub" id="pageviews30dRange">—</div>
@@ -413,7 +541,7 @@
             <div class="clustrmapsOverlay__metric">
               <div class="clustrmapsOverlay__kicker">Total</div>
               <div class="clustrmapsOverlay__value" id="pageviewsTotal">—</div>
-              <div class="clustrmapsOverlay__sub">Since Mar 10th 2020</div>
+              <div class="clustrmapsOverlay__sub" id="pageviewsTotalSub">Since Mar 10th 2020</div>
             </div>
           </div>
         </div>
@@ -425,7 +553,7 @@
     // Show GitHub stars on "Code" links and selected GitHub repos (data-ghrepo).
     (function () {
       const links = Array.from(document.querySelectorAll(
-        '.pub__links a.chip[href*="github.com/"], a[data-ghrepo], #news a[href*="github.com/"]'
+        '.pub__links a.chip[href*="github.com/"], .collab__links a.chip[href*="github.com/"], a[data-ghrepo], #news a[href*="github.com/"]'
       ));
       if (!links.length) return;
 
@@ -494,10 +622,10 @@
   </script>
 
   <script>
-    // Show citation counts next to each paper's Code link (via Semantic Scholar, using arXiv id).
+    // Show citation counts next to each paper's Code link (via Semantic Scholar).
     (function () {
-      const pubs = Array.from(document.querySelectorAll('#publications .pub'));
-      if (!pubs.length) return;
+      const papers = Array.from(document.querySelectorAll('#publications .pub, #collaborative-work .collab'));
+      if (!papers.length) return;
 
       function parseArxivId(href) {
         try {
@@ -517,8 +645,19 @@
         return String(n);
       }
 
-      async function getCites(arxivId) {
-        const key = `sscites:ARXIV:${arxivId}`;
+      function getPaperKey(paper) {
+        const s2Paper = (paper.getAttribute('data-s2paper') || '').trim();
+        if (s2Paper) return s2Paper;
+
+        const arxivLink = paper.querySelector(
+          '.pub__links a.chip[href*="arxiv.org/abs/"], .pub__title a[href*="arxiv.org/abs/"], .collab__title a[href*="arxiv.org/abs/"]'
+        );
+        const arxivId = arxivLink ? parseArxivId(arxivLink.href) : null;
+        return arxivId ? `ARXIV:${arxivId}` : null;
+      }
+
+      async function getCites(paperKey) {
+        const key = `sscites:${paperKey}`;
         const now = Date.now();
         try {
           const cached = JSON.parse(localStorage.getItem(key) || 'null');
@@ -527,7 +666,10 @@
           }
         } catch { }
 
-        const url = `https://api.semanticscholar.org/graph/v1/paper/ARXIV:${encodeURIComponent(arxivId)}?fields=citationCount`;
+        const paperPath = paperKey.startsWith('ARXIV:')
+          ? `ARXIV:${encodeURIComponent(paperKey.slice('ARXIV:'.length))}`
+          : encodeURIComponent(paperKey);
+        const url = `https://api.semanticscholar.org/graph/v1/paper/${paperPath}?fields=citationCount`;
         const res = await fetch(url, { headers: { 'Accept': 'application/json' }, cache: 'no-store' });
         if (!res.ok) throw new Error('Semantic Scholar API failed');
         const data = await res.json();
@@ -538,29 +680,33 @@
         return v;
       }
 
-      pubs.forEach((pub) => {
-        const arxivLink = pub.querySelector('.pub__links a.chip[href*="arxiv.org/abs/"], .pub__title a[href*="arxiv.org/abs/"]');
-        const codeLink = pub.querySelector('.pub__links a.chip[href*="github.com/"]');
-        if (!arxivLink || !codeLink) return;
-
-        const arxivId = parseArxivId(arxivLink.href);
-        if (!arxivId) return;
+      papers.forEach((paper) => {
+        const codeLink = paper.querySelector('.pub__links a.chip[href*="github.com/"], .collab__links a.chip[href*="github.com/"]');
+        const paperKey = getPaperKey(paper);
+        if (!codeLink || !paperKey) return;
+        const fallbackCites = Number(paper.getAttribute('data-citations'));
+        const hasFallbackCites = Number.isFinite(fallbackCites) && fallbackCites >= 0;
 
         // Add placeholder right after stars badge (or at end of link).
         if (!codeLink.querySelector('.ghcite__badge')) {
           const holder = document.createElement('span');
           holder.className = 'ghcite__badge';
-          holder.innerHTML = ` · <span class="ghcite__label">Cite</span> <span class="ghcite__count">—</span>`;
+          holder.innerHTML = ` · <span class="ghcite__label">Cite</span> <span class="ghcite__count">${hasFallbackCites ? formatCount(fallbackCites) : '—'}</span>`;
           codeLink.appendChild(holder);
         }
+        if (hasFallbackCites && !codeLink.title.includes('citations:')) {
+          const prev = codeLink.title ? `${codeLink.title} | ` : '';
+          codeLink.title = `${prev}citations: ${fallbackCites}`;
+        }
 
-        getCites(arxivId).then((v) => {
+        getCites(paperKey).then((v) => {
           if (typeof v !== 'number') return;
           const c = codeLink.querySelector('.ghcite__count');
           if (c) c.textContent = formatCount(v);
           const prev = codeLink.title ? `${codeLink.title} | ` : '';
           codeLink.title = `${prev}citations: ${v}`;
         }).catch(() => {
+          if (hasFallbackCites) return;
           const b = codeLink.querySelector('.ghcite__badge');
           if (b) b.remove();
         });
@@ -576,6 +722,8 @@
       const out = document.getElementById('pageviewsTotal');
       const out30d = document.getElementById('pageviews30d');
       const out30dRange = document.getElementById('pageviews30dRange');
+      const metric30d = document.getElementById('pageviews30dMetric');
+      const totalSub = document.getElementById('pageviewsTotalSub');
       if (!mount || !overlay || !out) return;
 
       function parse30dFromWidget() {
@@ -587,8 +735,10 @@
         const dText = (dEl?.textContent || '').replace(/\s+/g, ' ').trim();
 
         const m = vText.match(/(\d[\d,]*)\s*Pageviews/i);
-        if (out30d && m?.[1]) out30d.textContent = m[1];
+        const has30d = Boolean(m?.[1]);
+        if (out30d && has30d) out30d.textContent = m[1];
         if (out30dRange && dText) out30dRange.textContent = dText;
+        return has30d;
       }
 
       function hideMonthlyHeader() {
@@ -598,6 +748,30 @@
         });
       }
 
+      function formatUpdatedAt(value) {
+        if (!value) return '';
+        const date = new Date(value);
+        if (Number.isNaN(date.getTime())) return '';
+        return date.toLocaleDateString('en-US', {
+          year: 'numeric',
+          month: 'short',
+          day: 'numeric',
+          timeZone: 'UTC'
+        });
+      }
+
+      function markWidgetUnavailable() {
+        const hasWidgetMap = Boolean(mount.querySelector('#clustrmaps-widget-v2, .clustrmaps-map-container'));
+        const has30d = parse30dFromWidget();
+        if (!has30d) {
+          if (out30d) out30d.textContent = '—';
+          if (out30dRange) out30dRange.textContent = 'temporarily unavailable';
+        }
+        if (!hasWidgetMap) {
+          document.getElementById('clustrmapsWrap')?.classList.add('is-static');
+        }
+      }
+
       async function loadTotal() {
         const res = await fetch('data/pageviews.json', { cache: 'no-store' });
         if (!res.ok) throw new Error('pageviews.json missing');
@@ -605,10 +779,17 @@
         const v = data && typeof data.totalPageviews === 'number' ? data.totalPageviews : null;
         if (typeof v !== 'number') throw new Error('bad value');
         out.textContent = v.toLocaleString('en-US');
+        const updated = formatUpdatedAt(data.updatedAt);
+        if (totalSub) {
+          totalSub.textContent = updated
+            ? `Since Mar 10th 2020 · updated ${updated}`
+            : 'Since Mar 10th 2020';
+        }
         overlay.style.display = 'block';
 
         // Make overlay styling active + keep header hidden even if ClustrMaps updates later.
         document.documentElement.classList.add('pageviews-overlay-on');
+        if (metric30d) metric30d.hidden = false;
         parse30dFromWidget();
         hideMonthlyHeader();
 
@@ -617,6 +798,7 @@
           hideMonthlyHeader();
         });
         obs.observe(mount, { childList: true, subtree: true, characterData: true });
+        setTimeout(markWidgetUnavailable, 3500);
         setTimeout(() => obs.disconnect(), 15000);
       }
 
@@ -636,4 +818,3 @@
 </body>
 
 </html>
-

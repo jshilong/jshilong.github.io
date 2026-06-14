@@ -1,6 +1,9 @@
 import fs from "node:fs/promises";
 
-const ANALYTICS_URL = "https://clustrmaps.com/site/1b50n";
+const ANALYTICS_URLS = [
+  "https://clustrmaps.com/site/1b50n",
+  "https://www.clustrmaps.com/site/1b50n",
+];
 const OUT_PATH = "data/pageviews.json";
 
 async function fetchText(url) {
@@ -28,10 +31,6 @@ function parseTotalPageviews(html) {
 }
 
 async function main() {
-  const html = await fetchText(ANALYTICS_URL);
-  const total = parseTotalPageviews(html);
-  if (!total) throw new Error("Could not parse Total Pageviews");
-
   let prev = null;
   try {
     prev = JSON.parse(await fs.readFile(OUT_PATH, "utf8"));
@@ -39,10 +38,35 @@ async function main() {
     // ignore
   }
 
+  const errors = [];
+  let total = null;
+  let source = null;
+  for (const url of ANALYTICS_URLS) {
+    try {
+      const html = await fetchText(url);
+      total = parseTotalPageviews(html);
+      if (!total) throw new Error("Could not parse Total Pageviews");
+      source = url;
+      break;
+    } catch (err) {
+      errors.push(`${url}: ${err.message}`);
+    }
+  }
+
+  if (!total || !source) {
+    if (prev && typeof prev.totalPageviews === "number") {
+      console.warn("Could not refresh ClustrMaps total; keeping existing snapshot.");
+      console.warn(errors.join("\n"));
+      console.log(`Total Pageviews: ${prev.totalPageviews} (stale)`);
+      return;
+    }
+    throw new Error(`Could not refresh ClustrMaps total:\n${errors.join("\n")}`);
+  }
+
   const next = {
     totalPageviews: total,
     since: "2020-03-10",
-    source: ANALYTICS_URL,
+    source,
     updatedAt: new Date().toISOString(),
   };
 
@@ -59,4 +83,3 @@ main().catch((err) => {
   console.error(err);
   process.exit(1);
 });
-

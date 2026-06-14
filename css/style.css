@@ -354,6 +354,10 @@ a:focus {
     filter: none;
 }
 
+.logoRow__item .logoRow__img--meta {
+    height: 18px;
+}
+
 .logoRow__item:hover {
     transform: translateY(-1px);
     background: rgba(255, 255, 255, 0.86);
@@ -625,6 +629,73 @@ a:focus {
     }
 }
 
+/* Selected collaborative work */
+.collabList {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 10px;
+}
+
+.collab {
+    display: grid;
+    grid-template-columns: 44px 1fr;
+    gap: 10px;
+    padding: 12px;
+    border-radius: 14px;
+    border: 1px solid var(--hairline);
+    background: rgba(255, 255, 255, 0.42);
+    box-shadow: var(--glow);
+}
+
+@media (prefers-color-scheme: dark) {
+    .collab {
+        background: rgba(255, 255, 255, 0.05);
+    }
+}
+
+.collab__year {
+    color: var(--muted);
+    font-size: 12px;
+    font-weight: 900;
+    line-height: 1.45;
+}
+
+.collab__title {
+    margin: 0 0 6px 0;
+    font-size: 13.5px;
+    line-height: 1.45;
+    letter-spacing: 0;
+}
+
+.collab__desc {
+    margin: 0;
+    color: var(--muted);
+    font-size: 12.5px;
+    line-height: 1.55;
+}
+
+.collab__links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 8px;
+}
+
+@media (max-width: 620px) {
+    .collabList {
+        grid-template-columns: 1fr;
+    }
+
+    .collab {
+        grid-template-columns: 1fr;
+        gap: 4px;
+    }
+
+    .collab__year {
+        color: var(--text);
+    }
+}
+
 /* Footer */
 .footer {
     margin-top: 18px;
@@ -647,6 +718,18 @@ a:focus {
     width: 100%;
     margin: 0 auto;
     height: min(420px, 52vh);
+}
+
+.clustrmapsWrap.is-static {
+    height: auto;
+    min-height: 0;
+    padding: 16px;
+    display: flex;
+    justify-content: center;
+}
+
+.clustrmapsWrap.is-static #clustrmapsMount {
+    display: none;
 }
 
 .clustrmapsWrap #clustrmapsMount {
@@ -723,6 +806,27 @@ a:focus {
     max-width: calc(100% - 24px);
 }
 
+.clustrmapsWrap.is-static .clustrmapsOverlay {
+    position: static;
+    right: auto;
+    top: auto;
+    left: auto;
+    transform: none;
+    width: min(360px, 100%);
+    max-width: 100%;
+    color: var(--text);
+    text-shadow: none;
+    border: 1px solid var(--hairline);
+    background: rgba(255, 255, 255, 0.58);
+    box-shadow: var(--glow);
+}
+
+@media (prefers-color-scheme: dark) {
+    .clustrmapsWrap.is-static .clustrmapsOverlay {
+        background: rgba(255, 255, 255, 0.06);
+    }
+}
+
 /* On small screens, keep the overlay centered to avoid covering too much of the map. */
 @media (max-width: 700px) {
     .clustrmapsOverlay {
@@ -753,6 +857,21 @@ a:focus {
     border-radius: 14px;
     border: 1px solid rgba(255, 255, 255, 0.18);
     background: rgba(255, 255, 255, 0.06);
+}
+
+.clustrmapsOverlay__metric[hidden] {
+    display: none;
+}
+
+.clustrmapsWrap.is-static .clustrmapsOverlay__metric {
+    border-color: var(--hairline);
+    background: rgba(0, 0, 0, 0.035);
+}
+
+@media (prefers-color-scheme: dark) {
+    .clustrmapsWrap.is-static .clustrmapsOverlay__metric {
+        background: rgba(255, 255, 255, 0.05);
+    }
 }
 
 .clustrmapsOverlay__kicker {
