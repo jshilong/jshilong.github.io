@@ -2,91 +2,174 @@
 <html lang="en">
 
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <!-- Google Analytics (GA4) -->
-    <!-- TODO: replace with your GA4 Measurement ID (G-XXXXXXXXXX) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <!-- Google Analytics (GA4) -->
+  <!-- TODO: replace with your GA4 Measurement ID (G-XXXXXXXXXX) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
   <script type="text/javascript" src="js/hidebib.js?v=20260118-6"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
+  <script>
+    window.dataLayer = window.dataLayer || [];
     function gtag() { dataLayer.push(arguments); }
-        gtag('js', new Date());
-        gtag('config', 'G-XXXXXXXXXX');
-    </script>
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXXXXX');
+  </script>
 
-    <title>Shilong Zhang</title>
+  <script>
+    // Apply a saved light/dark choice before first paint to avoid a flash of the wrong theme.
+    document.documentElement.classList.add('js');
+    try {
+      var savedTheme = localStorage.getItem('theme');
+      if (savedTheme === 'light' || savedTheme === 'dark') {
+        document.documentElement.setAttribute('data-theme', savedTheme);
+      }
+    } catch (e) { }
+  </script>
 
-    <meta name="author" content="Shilong Zhang">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Shilong Zhang</title>
+
+  <meta name="author" content="Shilong Zhang">
+  <meta name="description"
+    content="Shilong Zhang is a final-year Ph.D. student at MMLab@HKU working on unified models for visual understanding and generation.">
   <meta name="color-scheme" content="light dark">
-  <meta name="theme-color" content="#0b1220">
+  <meta name="theme-color" content="#fcfbf8" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#141413" media="(prefers-color-scheme: dark)">
 
-  <!-- Brush-style Chinese name font -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Shilong Zhang">
+  <meta property="og:description"
+    content="Final-year Ph.D. student at MMLab@HKU working on unified models for visual understanding and generation.">
+  <meta property="og:url" content="https://jshilong.github.io/">
+  <meta property="og:image" content="https://jshilong.github.io/images/ShilongZhang.jpg">
+  <meta name="twitter:card" content="summary">
+
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+
+  <!-- Newsreader (text) + Inter (labels) + a three-glyph subset of Noto Serif SC for the Chinese name.
+       Loaded without blocking first paint, because Google Fonts is slow or unreachable in some regions;
+       the CSS falls back to good system serifs. -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Liu+Jian+Mao+Cao&family=Ma+Shan+Zheng&display=swap" rel="stylesheet">
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400..700&family=Newsreader:ital,opsz,wght@0,6..72,300..700;1,6..72,300..700&display=swap"
+    media="print" onload="this.media='all'">
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@500&text=%E5%BC%A0%E5%A3%AB%E9%BE%99&display=swap"
+    media="print" onload="this.media='all'">
+  <noscript>
+    <link rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400..700&family=Newsreader:ital,opsz,wght@0,6..72,300..700;1,6..72,300..700&display=swap">
+    <link rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@500&text=%E5%BC%A0%E5%A3%AB%E9%BE%99&display=swap">
+  </noscript>
 
-  <link rel="stylesheet" type="text/css" href="stylesheet.css?v=20260118-6">
-  <link rel="stylesheet" type="text/css" href="css/style.css?v=20260118-10">
-    <!-- <link rel="icon" type="image/png" href="images/JHU_icon.jpg"> -->
+  <link rel="stylesheet" type="text/css" href="css/style.css?v=20261001-3">
 </head>
 
-<body>
-  <main class="page">
-    <header class="hero" id="top">
-      <div class="hero__text">
-        <h1 class="hero__name">Shilong Zhang <span class="hero__nameZh">张士龙</span></h1>
+<body id="top">
+  <a class="skip" href="#main">Skip to content</a>
 
-        <div class="prose">
-          <p>
-            Shilong is a final-year Ph.D. student (2023&ndash;present) at <a href="https://mmlab.hk/member">MMLab@The University of Hong Kong (HKU)</a>, advised by
-            <a href="http://luoping.me/">Prof. Ping Luo</a>. Previously, he worked with <a href="http://chenkai.site/">Kai Chen</a> and contributed as a core developer to
-            <a href="https://github.com/open-mmlab/mmdetection" data-ghrepo="open-mmlab/mmdetection">MMDetection</a> and
-            <a href="https://github.com/open-mmlab/mmcv" data-ghrepo="open-mmlab/mmcv">MMCV</a>.
-          </p>
-          <p>
-            During his Ph.D., he has collaborated broadly with industry teams, including Alibaba Wan, ByteDance
-            Monetization and Seed, Adobe Research, and Meta.
-          </p>
-          <p>
-            He completed his Bachelor's degree from the <a href="https://www.ustc.edu.cn">University of Science and
-              Technology of China (USTC)</a> in 2019, distinguishing himself as one of the top <b>5%</b>
-            <a href="https://www.teach.ustc.edu.cn/?attachment_id=9884">outstanding graduates</a>.
-          </p>
- 
+  <header class="nav" id="siteNav">
+    <div class="wrap nav__inner">
+      <a class="nav__brand" href="#top">Shilong Zhang</a>
+      <nav class="nav__links" id="navLinks" aria-label="Sections">
+        <a href="#about">About</a>
+        <a href="#research">Research</a>
+        <a href="#news">News</a>
+        <a href="#publications">Publications</a>
+        <a href="#collaborative-work">Collaborations</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <button class="nav__toggle" id="themeToggle" type="button" aria-label="Toggle dark mode">
+        <svg class="icon icon--moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
+          stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
+        </svg>
+        <svg class="icon icon--sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
+          stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <circle cx="12" cy="12" r="4" />
+          <path
+            d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41" />
+        </svg>
+      </button>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="intro" id="about" aria-label="About">
+      <div class="wrap intro__grid">
+        <div class="intro__text">
+          <h1 class="intro__name">Shilong Zhang <span class="intro__zh" lang="zh-CN">张士龙</span></h1>
+          <p class="intro__role">Final-year Ph.D. student · MMLab@HKU</p>
+          <p class="intro__lede">Unified models for visual understanding and generation.</p>
+
+          <div class="prose">
+            <p>
+              Shilong is a final-year Ph.D. student (2023&ndash;present) at <a href="https://mmlab.hk/member">MMLab@The University of Hong Kong (HKU)</a>, advised by
+              <a href="http://luoping.me/">Prof. Ping Luo</a>. Previously, he worked with <a href="http://chenkai.site/">Kai Chen</a> and contributed as a core developer to
+              <a href="https://github.com/open-mmlab/mmdetection" data-ghrepo="open-mmlab/mmdetection">MMDetection</a> and
+              <a href="https://github.com/open-mmlab/mmcv" data-ghrepo="open-mmlab/mmcv">MMCV</a>.
+            </p>
+            <p>
+              During his Ph.D., he has collaborated broadly with industry teams, including Alibaba Wan, ByteDance
+              Monetization and Seed, Adobe Research, and Meta.
+            </p>
+            <p>
+              He completed his Bachelor's degree from the <a href="https://www.ustc.edu.cn">University of Science and
+                Technology of China (USTC)</a> in 2019, distinguishing himself as one of the top <b>5%</b>
+              <a href="https://www.teach.ustc.edu.cn/?attachment_id=9884">outstanding graduates</a>.
+            </p>
+          </div>
+
+          <ul class="intro__links">
+            <li>
+              <a class="pill" href="mailto:2392587229zsl@gmail.com">
+                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
+                  stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <rect x="3" y="5" width="18" height="14" rx="2" />
+                  <path d="m3.5 6.5 8.5 6 8.5-6" />
+                </svg>Email</a>
+            </li>
+            <li>
+              <a class="pill" href="https://scholar.google.com/citations?hl=zh-CN&user=s1NMu_UAAAAJ">
+                <svg class="icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                  <path d="M5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82zM12 3 1 9l11 6 9-4.91V17h2V9L12 3z" />
+                </svg>Google Scholar</a>
+            </li>
+            <li>
+              <a class="pill" href="https://github.com/jshilong">
+                <svg class="icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                  <path
+                    d="M12 .3a12 12 0 0 0-3.8 23.38c.6.12.83-.26.83-.57L9 21.07c-3.34.72-4.04-1.61-4.04-1.61-.55-1.39-1.34-1.76-1.34-1.76-1.08-.74.09-.73.09-.73 1.2.09 1.84 1.24 1.84 1.24 1.07 1.83 2.81 1.3 3.5 1 .1-.78.42-1.31.76-1.61-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.14-.3-.54-1.52.1-3.18 0 0 1-.32 3.3 1.23a11.5 11.5 0 0 1 6 0c2.28-1.55 3.29-1.23 3.29-1.23.64 1.66.24 2.88.12 3.18a4.65 4.65 0 0 1 1.23 3.22c0 4.61-2.8 5.63-5.48 5.92.42.36.81 1.1.81 2.22l-.01 3.29c0 .31.2.69.82.57A12 12 0 0 0 12 .3" />
+                </svg>GitHub</a>
+            </li>
+          </ul>
         </div>
 
-        <nav class="hero__links" aria-label="profile links">
-          <a class="btn btn--ghost" href="mailto:2392587229zsl@gmail.com">Email</a>
-          <a class="btn btn--ghost" href="https://scholar.google.com/citations?hl=zh-CN&user=s1NMu_UAAAAJ">Google
-            Scholar</a>
-          <a class="btn btn--ghost" href="https://github.com/jshilong">GitHub</a>
-        </nav>
-      </div>
-
-      <div class="hero__photo">
-        <a href="images/ShilongZhang.jpg">
-          <img alt="profile photo" src="images/ShilongZhang.jpg" loading="lazy" decoding="async">
+        <a class="intro__photo" href="images/ShilongZhang.jpg">
+          <img alt="Portrait of Shilong Zhang" src="images/ShilongZhang.jpg" width="684" height="718" decoding="async"
+            fetchpriority="high">
         </a>
       </div>
-    </header>
+    </section>
 
-    <section class="section" id="research">
-      <div class="section__header">
-        <h2 class="section__title">Research</h2>
-      </div>
+    <section class="section" id="research" aria-labelledby="researchTitle">
+      <div class="wrap">
+        <header class="section__head">
+          <h2 class="section__title" id="researchTitle">Research</h2>
+        </header>
 
-      <div class="research">
-        <p class="research__lead">
-          My research agenda connects visual perception/understanding and generation, aiming to build unified models
-          that truly understand the world, rather than merely translating between modalities.
+        <p class="statement">
+          My research agenda connects visual perception/understanding and generation, aiming to build
+          <em>unified models</em> that truly understand the world, rather than merely translating between modalities.
         </p>
 
-        <ul class="timeline">
-          <li class="timeline__item">
-            <div class="timeline__time">2020–2023 · Object Detection &amp; Multimodal Understanding</div>
-            <div class="timeline__body">
+        <ol class="eras">
+          <li class="era">
+            <p class="era__years">2020–2023</p>
+            <div class="era__body">
+              <h3 class="era__title">Object Detection &amp; Multimodal Understanding</h3>
               <p>
                 My research began with object detection, focusing on the co-design of efficient architectures and
                 training optimization.
@@ -97,434 +180,488 @@
                 realized a fundamental limitation of dominant VLM paradigms: projecting vision into language space does
                 not genuinely enable models to learn visual knowledge.
               </p>
-              <p>
+              <p class="era__collab">
                 This stage of my work was developed in collaboration with SenseTime and Shanghai AI Lab.
               </p>
-              <div class="logoRow" aria-label="Affiliations during 2020–2023">
-                <a class="logoRow__item" href="https://www.sensetime.com" target="_blank" rel="noopener noreferrer">
+              <div class="logos" role="group" aria-label="Affiliations during 2020–2023">
+                <a class="logo" href="https://www.sensetime.com" target="_blank" rel="noopener noreferrer">
                   <img src="internships/sensetime.png" alt="SenseTime" loading="lazy" decoding="async">
                 </a>
-                <a class="logoRow__item" href="https://www.shlab.org.cn" target="_blank" rel="noopener noreferrer">
-                  <img src="internships/shlab.png" alt="Shanghai AI Lab" loading="lazy" decoding="async">
+                <a class="logo" href="https://www.shlab.org.cn" target="_blank" rel="noopener noreferrer">
+                  <img class="logo__img--shlab" src="internships/shlab.png" alt="Shanghai AI Lab" loading="lazy"
+                    decoding="async">
                 </a>
               </div>
             </div>
           </li>
-          <li class="timeline__item">
-            <div class="timeline__time">2023–2025 · Generative Models</div>
-            <div class="timeline__body">
+          <li class="era">
+            <p class="era__years">2023–2025</p>
+            <div class="era__body">
+              <h3 class="era__title">Generative Models</h3>
               <p>
                 This insight motivated my transition to vision generation, where models are forced to internalize visual
                 structure, semantics, and dynamics directly from data—much closer to how humans learn by continuously
                 predicting visual content.
               </p>
-              <p>
+              <p class="era__collab">
                 This stage of my work was developed in collaboration with Alibaba Tongyi Lab and ByteDance.
               </p>
-              <div class="logoRow" aria-label="Affiliations during 2023–2025">
-                <a class="logoRow__item" href="https://tongyi.aliyun.com/" target="_blank" rel="noopener noreferrer">
-                  <img src="internships/ali.png" alt="Alibaba Tongyi Lab" loading="lazy" decoding="async">
+              <div class="logos" role="group" aria-label="Affiliations during 2023–2025">
+                <a class="logo" href="https://tongyi.aliyun.com/" target="_blank" rel="noopener noreferrer">
+                  <img class="logo__img--ali" src="internships/ali.png" alt="Alibaba Tongyi Lab" loading="lazy"
+                    decoding="async">
                 </a>
-                <a class="logoRow__item" href="https://www.bytedance.com/en/" target="_blank" rel="noopener noreferrer">
+                <a class="logo" href="https://www.bytedance.com/en/" target="_blank" rel="noopener noreferrer">
                   <img src="internships/bytedance.png" alt="ByteDance" loading="lazy" decoding="async">
                 </a>
               </div>
             </div>
           </li>
-          <li class="timeline__item">
-            <div class="timeline__time">2025–present · Unify</div>
-            <div class="timeline__body">
+          <li class="era era--now">
+            <p class="era__years">2025–present</p>
+            <div class="era__body">
+              <h3 class="era__title">Unify</h3>
               <p>
                 I try to build a unified visual representation space that is strong for understanding, friendly to
                 generation, and capable of preserving all visual information. I believe this is a key step toward an
                 elegant visual-language model for both understanding and generation.
               </p>
-              <p>
+              <p class="era__collab">
                 This stage of work was developed in collaboration with Adobe Research, ByteDance Seed, and Meta.
               </p>
-              <div class="logoRow" aria-label="Affiliations during 2025–2026">
-                <a class="logoRow__item" href="https://research.adobe.com/" target="_blank" rel="noopener noreferrer">
+              <div class="logos" role="group" aria-label="Affiliations during 2025–2026">
+                <a class="logo" href="https://research.adobe.com/" target="_blank" rel="noopener noreferrer">
                   <img src="internships/adobe.png" alt="Adobe Research" loading="lazy" decoding="async">
                 </a>
-                <a class="logoRow__item" href="https://seed.bytedance.com/en/" target="_blank" rel="noopener noreferrer">
+                <a class="logo" href="https://seed.bytedance.com/en/" target="_blank" rel="noopener noreferrer">
                   <img src="internships/bytedance_seed.png" alt="ByteDance Seed" loading="lazy" decoding="async">
                 </a>
-                <a class="logoRow__item" href="https://about.meta.com/" target="_blank" rel="noopener noreferrer">
-                  <img class="logoRow__img--meta" src="internships/meta.svg" alt="Meta" loading="lazy" decoding="async">
+                <a class="logo" href="https://about.meta.com/" target="_blank" rel="noopener noreferrer">
+                  <img class="logo__img--meta" src="internships/meta.svg" alt="Meta" loading="lazy" decoding="async">
                 </a>
               </div>
             </div>
           </li>
-        </ul>
+        </ol>
+      </div>
+    </section>
 
-        <p class="research__cta">
+    <section class="section" id="news" aria-labelledby="newsTitle">
+      <div class="wrap">
+        <header class="section__head">
+          <h2 class="section__title" id="newsTitle">News</h2>
+        </header>
+        <ul class="news">
+          <li class="news__item">
+            <time class="news__date" datetime="2025-12-19">Dec 19, 2025</time>
+            <p class="news__text"><a href="https://arxiv.org/abs/2512.17909">PS-VAE</a>: 96-channel generative latent
+              toward a unified encoder for understanding + generation/editing (<a
+                href="https://jshilong.github.io/PS-VAE-PAGE/">Project Page</a>).</p>
+          </li>
+          <li class="news__item">
+            <time class="news__date" datetime="2025-02-10">Feb 10, 2025</time>
+            <p class="news__text">We present <a href="https://jshilong.github.io/flashvideo-page/">FlashVideo</a>, an
+              efficient paradigm for text-to-video generation (<a
+                href="https://github.com/FoundationVision/FlashVideo">Code</a>).</p>
+          </li>
+          <li class="news__item">
+            <time class="news__date" datetime="2024-03-26">Mar 26, 2024</time>
+            <p class="news__text">We propose <a href="https://jshilong.github.io/flashface-page/">FlashFace</a> that can
+              generate high ID fidelity images in seconds (<a href="https://github.com/ali-vilab/FlashFace">Code</a>).</p>
+          </li>
+          <li class="news__item">
+            <time class="news__date" datetime="2023-07-07">Jul 7, 2023</time>
+            <p class="news__text">We present a vision and language model named <a
+                href="https://github.com/jshilong/GPT4RoI">GPT4RoI</a> to do region-level image understanding.</p>
+          </li>
+          <li class="news__item">
+            <time class="news__date" datetime="2023-04-26">Apr 26, 2023</time>
+            <p class="news__text">We present a vision and language model named <a
+                href="https://github.com/open-mmlab/Multimodal-GPT">MultiModal-GPT</a>.</p>
+          </li>
+          <li class="news__item">
+            <time class="news__date" datetime="2023-03-20">Mar 20, 2023</time>
+            <p class="news__text">DDQ DETR achieve 52.1 AP with R-50 backbone within 12 epochs (<a
+                href="https://github.com/jshilong/DDQ">Code</a>).</p>
+          </li>
+          <li class="news__item">
+            <time class="news__date" datetime="2021-11-27">Nov 27, 2021</time>
+            <p class="news__text">We release <a href="https://github.com/open-mmlab/mmfewshot">MMFewShot</a>, an open
+              source few shot learning toolbox based on PyTorch.</p>
+          </li>
+          <li class="news__item">
+            <time class="news__date" datetime="2019-06-28">Jun 28, 2019</time>
+            <p class="news__text">Awarded as outstanding graduates by USTC.</p>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section" id="publications" aria-labelledby="pubsTitle">
+      <div class="wrap">
+        <header class="section__head">
+          <h2 class="section__title" id="pubsTitle">Selected publications</h2>
+          <p class="section__aside">
+            First-/co-first-author and thesis-line work. Full list: <a
+              href="https://scholar.google.com/citations?hl=zh-CN&user=s1NMu_UAAAAJ">Google Scholar</a>.
+          </p>
+        </header>
+
+        <div class="pubs">
+          <article class="pub" data-citations="24">
+            <a class="pub__thumb" href="https://jshilong.github.io/PS-VAE-PAGE/" tabindex="-1" aria-hidden="true">
+              <img class="pub__img" src="images/ps-vae.png" alt="" loading="lazy" decoding="async">
+              <img class="pub__teaser" src="images/teasers/ps-vae.jpg" alt="" loading="lazy" decoding="async">
+            </a>
+            <div class="pub__body">
+              <p class="pub__meta"><span class="venue">ICML 2026</span></p>
+              <h3 class="pub__title">
+                <a href="https://arxiv.org/abs/2512.17909">Both Semantics and Reconstruction Matter: Making
+                  Representation Encoders Ready for Text-to-Image Generation and Editing</a>
+              </h3>
+              <p class="pub__authors"><span class="me">Shilong Zhang</span>, He Zhang, Zhifei Zhang, Chongjian Ge, Shuchen Xue, Shaoteng
+                Liu, Mengwei Ren, Soo Ye Kim, Yuqian Zhou, Qing Liu, Daniil Pakhomov, Kai Zhang, Zhe Lin, Ping Luo</p>
+              <p class="pub__desc">
+                We systematically adapt understanding-oriented encoder features for generation/editing by jointly
+                regularizing semantics and pixel reconstruction, compressing both into a compact 96-channel latent (16×16
+                downsampling). This points to the potential of a <b>unified encoder</b> that supports <b>understanding +
+                  generation/editing</b> within a single model backbone.
+              </p>
+              <p class="pub__links">
+                <a class="chip chip--paper" href="https://arxiv.org/abs/2512.17909">Paper</a>
+                <a class="chip chip--page" href="https://jshilong.github.io/PS-VAE-PAGE/">Project page</a>
+              </p>
+            </div>
+          </article>
+
+          <article class="pub" data-citations="38">
+            <a class="pub__thumb" href="https://arxiv.org/abs/2502.05179" tabindex="-1" aria-hidden="true">
+              <img class="pub__img" src="images/flashvideo.png" alt="" loading="lazy" decoding="async">
+              <video class="pub__teaser" data-src="images/teasers/flashvideo.mp4"
+                data-poster="images/teasers/flashvideo.jpg" muted loop playsinline preload="none"></video>
+            </a>
+            <div class="pub__body">
+              <p class="pub__meta"><span class="venue">AAAI 2026</span><span class="pub__note">* Equal contribution</span></p>
+              <h3 class="pub__title">
+                <a href="https://arxiv.org/abs/2502.05179">FlashVideo: Flowing Fidelity to Detail for Efficient
+                  High-Resolution Video Generation</a>
+              </h3>
+              <p class="pub__authors"><span class="me">Shilong Zhang*</span>, Wenbo Li*, Shoufa Chen, Chongjian Ge, Peize Sun, Yida Zhang,
+                Yi Jiang, Zehuan Yuan, Binyue Peng, Ping Luo</p>
+              <p class="pub__desc">
+                (a) Dividing the process into prompt fidelity and quality enhancement stages, delivering a stunning
+                reduction in DiT's computational load. (b) Enabling users to preview the initial output and accordingly
+                adjust the prompt before committing to full-resolution generation, thereby significantly reducing wait
+                times and enhancing commercial viability.
+              </p>
+              <p class="pub__links">
+                <a class="chip chip--paper" href="https://arxiv.org/abs/2502.05179">Paper</a>
+                <a class="chip chip--code" href="https://github.com/FoundationVision/FlashVideo">Code</a>
+                <a class="chip chip--page" href="https://jshilong.github.io/flashvideo-page/">Project page</a>
+              </p>
+            </div>
+          </article>
+
+          <article class="pub" data-citations="34">
+            <a class="pub__thumb" href="https://arxiv.org/abs/2403.17008" tabindex="-1" aria-hidden="true">
+              <img class="pub__img" src="images/arch-minv2.png" alt="" loading="lazy" decoding="async">
+              <img class="pub__teaser" src="images/teasers/flashface.jpg" alt="" loading="lazy" decoding="async">
+            </a>
+            <div class="pub__body">
+              <h3 class="pub__title">
+                <a href="https://arxiv.org/abs/2403.17008">FlashFace: Human Image Personalization with High-fidelity
+                  Identity Preservation</a>
+              </h3>
+              <p class="pub__authors"><span class="me">Shilong Zhang</span>, Lianghua Huang, Xi Chen, Yifei Zhang, Zhi-Fan Wu, Yutong
+                Feng, Wei Wang, Yujun Shen, Yu Liu, Ping Luo</p>
+              <p class="pub__desc">
+                This work presents FlashFace, a practical tool with which users can easily personalize their own photos on
+                the fly by providing one or a few reference face images and a text prompt.
+              </p>
+              <p class="pub__links">
+                <a class="chip chip--paper" href="https://arxiv.org/abs/2403.17008">Paper</a>
+                <a class="chip chip--code" href="https://github.com/ali-vilab/FlashFace">Code</a>
+                <a class="chip chip--page" href="https://jshilong.github.io/flashface-page/">Project page</a>
+              </p>
+            </div>
+          </article>
+
+          <article class="pub" data-citations="375">
+            <a class="pub__thumb" href="https://arxiv.org/abs/2307.03601" tabindex="-1" aria-hidden="true">
+              <img class="pub__img" src="images/gpt4roi.png" alt="" loading="lazy" decoding="async">
+            </a>
+            <div class="pub__body">
+              <p class="pub__meta"><span class="venue">ECCVW 2025</span><span class="pub__note">* Equal contribution</span></p>
+              <h3 class="pub__title">
+                <a href="https://arxiv.org/abs/2307.03601">GPT4RoI: Instruction Tuning Large Language Model on
+                  Region-of-Interest</a>
+              </h3>
+              <p class="pub__authors"><span class="me">Shilong Zhang*</span>, Peize Sun*, Shoufa Chen*, Min Xiao, Wenqi Shao, Wenwei
+                Zhang, Kai Chen, Ping Luo</p>
+              <p class="pub__desc">We present a vision and language model named GPT4RoI to do region-level image
+                understanding.</p>
+              <p class="pub__links">
+                <a class="chip chip--paper" href="https://arxiv.org/abs/2307.03601">Paper</a>
+                <a class="chip chip--code" href="https://github.com/jshilong/GPT4RoI">Code</a>
+              </p>
+            </div>
+          </article>
+
+          <article class="pub" data-citations="329">
+            <a class="pub__thumb" href="https://arxiv.org/abs/2305.04790" tabindex="-1" aria-hidden="true">
+              <img class="pub__img" src="images/gpt.png" alt="" loading="lazy" decoding="async">
+            </a>
+            <div class="pub__body">
+              <p class="pub__meta"><span class="pub__note">* Random order</span></p>
+              <h3 class="pub__title">
+                <a href="https://arxiv.org/abs/2305.04790">MultiModal-GPT: A Vision and Language Model for Dialogue
+                  with Humans</a>
+              </h3>
+              <p class="pub__authors">Tao Gong*, Chengqi Lyu*, <span class="me">Shilong Zhang*</span>, Yudong Wang*, Miao Zheng*, Qian
+                Zhao*, Kuikun Liu*, Wenwei Zhang*, Ping Luo, Kai Chen</p>
+              <p class="pub__desc">We present a vision and language model named MultiModal-GPT to conduct multi-round
+                dialogue with humans.</p>
+              <p class="pub__links">
+                <a class="chip chip--paper" href="https://arxiv.org/abs/2305.04790">Paper</a>
+                <a class="chip chip--code" href="https://github.com/open-mmlab/Multimodal-GPT">Code</a>
+              </p>
+            </div>
+          </article>
+
+          <article class="pub" data-citations="325">
+            <a class="pub__thumb" href="https://arxiv.org/abs/2303.12776" tabindex="-1" aria-hidden="true">
+              <img class="pub__img" src="images/ddq.png" alt="" loading="lazy" decoding="async">
+            </a>
+            <div class="pub__body">
+              <p class="pub__meta"><span class="venue">CVPR 2023</span><span class="pub__note">* Equal contribution</span></p>
+              <h3 class="pub__title">
+                <a href="https://arxiv.org/abs/2303.12776">Dense Distinct Query for End-to-End Object Detection</a>
+              </h3>
+              <p class="pub__authors"><span class="me">Shilong Zhang*</span>, Xinjiang Wang*, Jiaqi Wang, Jiangmiao Pang, Chengqi Lyu,
+                Wenwei Zhang, Ping Luo, Kai Chen</p>
+              <p class="pub__desc">DDQ-DETR achieves 52.1 AP on MS-COCO dataset within 12 epochs using a ResNet-50
+                backbone, outperforming all existing detectors in the same setting.</p>
+              <p class="pub__links">
+                <a class="chip chip--paper" href="https://arxiv.org/abs/2303.12776">Paper</a>
+                <a class="chip chip--code" href="https://github.com/jshilong/DDQ">Code</a>
+              </p>
+            </div>
+          </article>
+
+          <article class="pub" data-citations="54">
+            <a class="pub__thumb" href="https://arxiv.org/abs/2205.05920" tabindex="-1" aria-hidden="true">
+              <img class="pub__img" src="images/grouprcnn.png" alt="" loading="lazy" decoding="async">
+            </a>
+            <div class="pub__body">
+              <p class="pub__meta"><span class="venue">CVPR 2022</span><span class="pub__note">* Equal contribution</span></p>
+              <h3 class="pub__title">
+                <a href="https://arxiv.org/abs/2205.05920">Group R-CNN for Point-based Weakly Semi-supervised Object
+                  Detection</a>
+              </h3>
+              <p class="pub__authors"><span class="me">Shilong Zhang*</span>, Zhuoran Yu*, Liyang Liu*, Xinjiang Wang, Aojun Zhou, Kai
+                Chen</p>
+              <p class="pub__desc">
+                We study the problem of weakly semi-supervised object detection with points (WSSOD-P). Group R-CNN
+                significantly outperforms the prior method Point DETR by 3.9 mAP with 5% well-labeled images.
+              </p>
+              <p class="pub__links">
+                <a class="chip chip--paper" href="https://arxiv.org/abs/2205.05920">Paper</a>
+                <a class="chip chip--code" href="https://github.com/jshilong/GroupRCNN">Code</a>
+              </p>
+            </div>
+          </article>
+
+          <article class="pub" data-citations="238">
+            <a class="pub__thumb" href="https://arxiv.org/abs/2108.00708" tabindex="-1" aria-hidden="true">
+              <img class="pub__img" src="images/pruning.png" alt="" loading="lazy" decoding="async">
+            </a>
+            <div class="pub__body">
+              <p class="pub__meta"><span class="venue">ICML 2021</span></p>
+              <h3 class="pub__title">
+                <a href="https://arxiv.org/abs/2108.00708">Group Fisher Pruning for Practical Network Compression</a>
+              </h3>
+              <p class="pub__authors">Liyang Liu, <span class="me">Shilong Zhang</span>, Zhanghui Kuang, Aojun Zhou, Jing-Hao Xue, Xinjiang Wang, Yimin Chen, Wenming Yang, Qingmin Liao, Wayne Zhang</p>
+              <p class="pub__desc">We present a general channel pruning framework for complicated structures.</p>
+              <p class="pub__links">
+                <a class="chip chip--paper" href="https://arxiv.org/abs/2108.00708">Paper</a>
+                <a class="chip chip--code" href="https://github.com/jshilong/FisherPruning.git">Code</a>
+              </p>
+            </div>
+          </article>
+
+          <article class="pub" data-citations="126">
+            <a class="pub__thumb" href="https://arxiv.org/abs/2005.03101" tabindex="-1" aria-hidden="true">
+              <img class="pub__img" src="images/sepc.png" alt="" loading="lazy" decoding="async">
+            </a>
+            <div class="pub__body">
+              <p class="pub__meta"><span class="venue">CVPR 2020</span><span class="pub__note">* Equal contribution</span></p>
+              <h3 class="pub__title">
+                <a href="https://arxiv.org/abs/2005.03101">Scale-equalizing Pyramid Convolution for Object
+                  Detection</a>
+              </h3>
+              <p class="pub__authors">Xinjiang Wang*, <span class="me">Shilong Zhang*</span>, Zhuoran Yu, Litong Feng, Wayne Zhang</p>
+              <p class="pub__desc">
+                We proposed a scale-equalizing pyramid convolution method that relaxes the discrepancy between the feature
+                pyramid and the gaussian pyramid. The module boosts the performance about 3.5 mAP in single-stage object
+                detection with negligible inference time.
+              </p>
+              <p class="pub__links">
+                <a class="chip chip--paper" href="https://arxiv.org/abs/2005.03101">Paper</a>
+                <a class="chip chip--code" href="https://github.com/jshilong/SEPC">Code</a>
+              </p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="collaborative-work" aria-labelledby="collabTitle">
+      <div class="wrap">
+        <header class="section__head">
+          <h2 class="section__title" id="collabTitle">Selected collaborative work</h2>
+          <p class="section__aside">Representative co-authored systems and papers</p>
+        </header>
+
+        <div class="collabs">
+          <article class="collab" data-s2paper="bcfecb076763b8cff41bc8719e7486fe759d6e62" data-citations="79">
+            <p class="collab__year">2025</p>
+            <div class="collab__body">
+              <h3 class="collab__title">
+                <a href="https://arxiv.org/abs/2502.04896">Goku: Flow Based Video Generative Foundation Models</a>
+              </h3>
+              <p class="collab__desc">
+                Joint image-video foundation model work for flow-based generation, with strong public code visibility and
+                broad community uptake.
+              </p>
+              <p class="collab__links">
+                <a class="chip chip--code" href="https://github.com/Saiyan-World/goku">Code</a>
+                <a class="chip chip--page" href="https://saiyan-world.github.io/goku/">Project page</a>
+              </p>
+            </div>
+          </article>
+
+          <article class="collab" data-s2paper="b15e6e2b1d81bc110f8fc98c3caf2e25e2512539" data-citations="820">
+            <p class="collab__year">2024</p>
+            <div class="collab__body">
+              <h3 class="collab__title">
+                <a href="https://arxiv.org/abs/2406.06525">Autoregressive Model Beats Diffusion: Llama for Scalable Image
+                  Generation</a>
+              </h3>
+              <p class="collab__desc">
+                A high-impact open-source direction showing that next-token prediction can scale to image generation with
+                the right tokenizer and architecture choices.
+              </p>
+              <p class="collab__links">
+                <a class="chip chip--code" href="https://github.com/FoundationVision/LlamaGen">Code</a>
+              </p>
+            </div>
+          </article>
+
+          <article class="collab" data-s2paper="ee7f769a73a533a871cd5fd9cd566d96a3f09107" data-citations="79">
+            <p class="collab__year">2024</p>
+            <div class="collab__body">
+              <h3 class="collab__title">
+                <a href="https://arxiv.org/abs/2406.07547">Zero-shot Image Editing with Reference Imitation</a>
+              </h3>
+              <p class="collab__desc">
+                MimicBrush reframes image editing around visual references, letting users specify style, identity, and
+                local detail through examples rather than text alone.
+              </p>
+              <p class="collab__links">
+                <a class="chip chip--code" href="https://github.com/ali-vilab/MimicBrush">Code</a>
+              </p>
+            </div>
+          </article>
+
+          <article class="collab" data-s2paper="619a3118436ae6d1d435c6322e855eefb41d1ffc" data-citations="90">
+            <p class="collab__year">2025</p>
+            <div class="collab__body">
+              <h3 class="collab__title">
+                <a href="https://arxiv.org/abs/2504.07963">PixelFlow: Pixel-Space Generative Models with Flow</a>
+              </h3>
+              <p class="collab__desc">
+                Pixel-space flow generation that questions whether image generation must depend on a pretrained VAE
+                bottleneck.
+              </p>
+              <p class="collab__links">
+                <a class="chip chip--code" href="https://github.com/ShoufaChen/PixelFlow">Code</a>
+              </p>
+            </div>
+          </article>
+
+          <article class="collab" data-s2paper="72d702e7e290c5a3223c42342e54f1b3e5dbf526" data-citations="61">
+            <p class="collab__year">2025</p>
+            <div class="collab__body">
+              <h3 class="collab__title">
+                <a href="https://arxiv.org/abs/2509.25050">Advantage Weighted Matching: Aligning RL with Pretraining in
+                  Diffusion Models</a>
+              </h3>
+              <p class="collab__desc">
+                Aligns diffusion post-training with the pretraining objective through advantage-weighted matching rather
+                than a separate noisy RL objective.
+              </p>
+              <p class="collab__links">
+                <a class="chip chip--code" href="https://github.com/scxue/advantage_weighted_matching">Code</a>
+              </p>
+            </div>
+          </article>
+
+          <article class="collab" data-s2paper="99ccc15094b9438448668d136d90a12e0c9443e1" data-citations="939">
+            <p class="collab__year">2022</p>
+            <div class="collab__body">
+              <h3 class="collab__title">
+                <a href="https://arxiv.org/abs/2212.07784">RTMDet: An Empirical Study of Designing Real-Time Object
+                  Detectors</a>
+              </h3>
+              <p class="collab__desc">
+                Practical real-time detection system study across architecture, label assignment, augmentation,
+                optimization, and task extensions.
+              </p>
+              <p class="collab__links">
+                <a class="chip chip--code" href="https://github.com/open-mmlab/mmdetection/tree/main/configs/rtmdet"
+                  data-ghrepo="open-mmlab/mmdetection">Code</a>
+              </p>
+            </div>
+          </article>
+
+          <article class="collab" data-s2paper="9ad6f2141a433ba13a43272d666dc3609198dd91" data-citations="121">
+            <p class="collab__year">2023</p>
+            <div class="collab__body">
+              <h3 class="collab__title">
+                <a href="https://openaccess.thecvf.com/content/CVPR2023/html/Wang_Consistent-Teacher_Towards_Reducing_Inconsistent_Pseudo-Targets_in_Semi-Supervised_Object_Detection_CVPR_2023_paper.html">Consistent-Teacher:
+                  Towards Reducing Inconsistent Pseudo-Targets in Semi-Supervised Object Detection</a>
+              </h3>
+              <p class="collab__desc">
+                CVPR Highlight work on stabilizing pseudo supervision in semi-supervised object detection.
+              </p>
+              <p class="collab__links">
+                <a class="chip chip--code" href="https://github.com/Adamdad/ConsistentTeacher">Code</a>
+              </p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section contact" id="contact" aria-labelledby="contactTitle">
+      <div class="wrap">
+        <header class="section__head">
+          <h2 class="section__title" id="contactTitle">Contact</h2>
+        </header>
+        <p class="contact__text">
           If your team is interested in my work, I would be glad to connect and discuss potential collaborations.
+        </p>
+        <p class="contact__links">
+          <a class="contact__email" href="mailto:2392587229zsl@gmail.com">2392587229zsl@gmail.com</a>
+          <a href="https://scholar.google.com/citations?hl=zh-CN&user=s1NMu_UAAAAJ">Google Scholar</a>
+          <a href="https://github.com/jshilong">GitHub</a>
         </p>
       </div>
     </section>
+  </main>
 
-    <section class="section" id="news">
-      <div class="section__header">
-        <h2 class="section__title">Recent News</h2>
-      </div>
-      <ul class="news">
-        <li><b>[2025/12/19]</b> <a href="https://arxiv.org/abs/2512.17909">PS-VAE</a>: 96-channel generative latent
-          toward a unified encoder for understanding + generation/editing (<a
-            href="https://jshilong.github.io/PS-VAE-PAGE/">Project Page</a>).</li>
-        <li><b>[2025/2/10]</b> We present <a href="https://jshilong.github.io/flashvideo-page/">FlashVideo</a>, an
-          efficient paradigm for text-to-video generation (<a
-            href="https://github.com/FoundationVision/FlashVideo">Code</a>).</li>
-        <li><b>[2024/3/26]</b> We propose <a href="https://jshilong.github.io/flashface-page/">FlashFace</a> that can
-          generate high ID fidelity images in seconds (<a href="https://github.com/ali-vilab/FlashFace">Code</a>).</li>
-        <li><b>[2023/7/7]</b> We present a vision and language model named <a
-            href="https://github.com/jshilong/GPT4RoI">GPT4RoI</a> to do region-level image understanding.</li>
-        <li><b>[2023/4/26]</b> We present a vision and language model named <a
-            href="https://github.com/open-mmlab/Multimodal-GPT">MultiModal-GPT</a>.</li>
-        <li><b>[2023/3/20]</b> DDQ DETR achieve 52.1 AP with R-50 backbone within 12 epochs (<a
-            href="https://github.com/jshilong/DDQ">Code</a>).</li>
-        <li><b>[2021/11/27]</b> We release <a href="https://github.com/open-mmlab/mmfewshot">MMFewShot</a>, an open
-          source few shot learning toolbox based on PyTorch.</li>
-        <li><b>[2019/6/28]</b> Awarded as outstanding graduates by USTC.</li>
-      </ul>
-    </section>
-
-    <section class="section" id="publications">
-      <div class="section__header">
-        <h2 class="section__title">Selected Publications</h2>
-        <div class="section__note">
-          First-/co-first-author and thesis-line work. Full list: <a
-            href="https://scholar.google.com/citations?hl=zh-CN&user=s1NMu_UAAAAJ">Google Scholar</a>.
-        </div>
-      </div>
-
-      <div class="pubList">
-        <article class="pub">
-          <a class="pub__thumb" href="https://jshilong.github.io/PS-VAE-PAGE/">
-            <img src="images/ps-vae.png" alt="PS-VAE thumbnail" loading="lazy" decoding="async">
-          </a>
-          <div class="pub__body">
-            <h3 class="pub__title">
-              <a href="https://arxiv.org/abs/2512.17909">[1] Both Semantics and Reconstruction Matter: Making
-                Representation Encoders Ready for Text-to-Image Generation and Editing</a>
-            </h3>
-            <div class="pub__authors"><span class="author-me">Shilong Zhang</span>, He Zhang, Zhifei Zhang, Chongjian Ge, Shuchen Xue, Shaoteng
-              Liu, Mengwei Ren, Soo Ye Kim, Yuqian Zhou, Qing Liu, Daniil Pakhomov, Kai Zhang, Zhe Lin, Ping Luo</div>
-            <div class="pub__meta"><em>ICML 2026</em></div>
-            <p class="pub__desc">
-              We systematically adapt understanding-oriented encoder features for generation/editing by jointly
-              regularizing semantics and pixel reconstruction, compressing both into a compact 96-channel latent (16×16
-              downsampling). This points to the potential of a <b>unified encoder</b> that supports <b>understanding +
-                generation/editing</b> within a single model backbone.
-            </p>
-            <div class="pub__links">
-              <a class="chip" href="https://arxiv.org/abs/2512.17909">Paper</a>
-              <a class="chip" href="https://jshilong.github.io/PS-VAE-PAGE/">Page</a>
-            </div>
-          </div>
-        </article>
-
-        <article class="pub">
-          <a class="pub__thumb" href="https://arxiv.org/abs/2502.05179">
-            <img src="images/flashvideo.png" alt="FlashVideo thumbnail" loading="lazy" decoding="async">
-          </a>
-          <div class="pub__body">
-            <h3 class="pub__title">
-              <a href="https://arxiv.org/abs/2502.05179">[2] FlashVideo: Flowing Fidelity to Detail for Efficient
-                High-Resolution Video Generation</a>
-            </h3>
-            <div class="pub__authors"><span class="author-me">Shilong Zhang*</span>, Wenbo Li*, Shoufa Chen, Chongjian Ge, Peize Sun, Yida Zhang,
-              Yi Jiang, Zehuan Yuan, Binyue Peng, Ping Luo</div>
-            <div class="pub__meta"><em>AAAI 2026(* Equal contribution)</em></div>
-            <p class="pub__desc">
-              (a) Dividing the process into prompt fidelity and quality enhancement stages, delivering a stunning
-              reduction in DiT's computational load. (b) Enabling users to preview the initial output and accordingly
-              adjust the prompt before committing to full-resolution generation, thereby significantly reducing wait
-              times and enhancing commercial viability.
-            </p>
-            <div class="pub__links">
-              <a class="chip" href="https://arxiv.org/abs/2502.05179">Paper</a>
-              <a class="chip" href="https://github.com/FoundationVision/FlashVideo">Code</a>
-            </div>
-          </div>
-        </article>
-
-        <article class="pub">
-          <a class="pub__thumb" href="https://arxiv.org/abs/2403.17008">
-            <img src="images/arch-minv2.png" alt="FlashFace thumbnail" loading="lazy" decoding="async">
-          </a>
-          <div class="pub__body">
-            <h3 class="pub__title">
-              <a href="https://arxiv.org/abs/2403.17008">[3] FlashFace: Human Image Personalization with High-fidelity
-                Identity Preservation</a>
-            </h3>
-            <div class="pub__authors"><span class="author-me">Shilong Zhang</span>, Lianghua Huang, Xi Chen, Yifei Zhang, Zhi-Fan Wu, Yutong
-              Feng, Wei Wang, Yujun Shen, Yu Liu, Ping Luo</div>
-            <p class="pub__desc">
-              This work presents FlashFace, a practical tool with which users can easily personalize their own photos on
-              the fly by providing one or a few reference face images and a text prompt.
-            </p>
-            <div class="pub__links">
-              <a class="chip" href="https://arxiv.org/abs/2403.17008">Paper</a>
-              <a class="chip" href="https://github.com/ali-vilab/FlashFace">Code</a>
-            </div>
-          </div>
-        </article>
-
-        <article class="pub">
-          <a class="pub__thumb" href="https://arxiv.org/abs/2307.03601">
-            <img src="images/gpt4roi.png" alt="GPT4RoI thumbnail" loading="lazy" decoding="async">
-          </a>
-          <div class="pub__body">
-            <h3 class="pub__title">
-              <a href="https://arxiv.org/abs/2307.03601">[4] GPT4RoI: Instruction Tuning Large Language Model on
-                Region-of-Interest</a>
-            </h3>
-            <div class="pub__authors"><span class="author-me">Shilong Zhang*</span>, Peize Sun*, Shoufa Chen*, Min Xiao, Wenqi Shao, Wenwei
-              Zhang, Kai Chen, Ping Luo</div>
-            <div class="pub__meta"><em>ECCVW 2025(* Equal contribution)</em></div>
-            <p class="pub__desc">We present a vision and language model named GPT4RoI to do region-level image
-              understanding.</p>
-            <div class="pub__links">
-              <a class="chip" href="https://arxiv.org/abs/2307.03601">Paper</a>
-              <a class="chip" href="https://github.com/jshilong/GPT4RoI">Code</a>
-            </div>
-          </div>
-        </article>
-
-        <article class="pub">
-          <a class="pub__thumb" href="https://arxiv.org/abs/2305.04790">
-            <img src="images/gpt.png" alt="MultiModal-GPT thumbnail" loading="lazy" decoding="async">
-          </a>
-          <div class="pub__body">
-            <h3 class="pub__title">
-              <a href="https://arxiv.org/abs/2305.04790">[5] MultiModal-GPT: A Vision and Language Model for Dialogue
-                with Humans</a>
-            </h3>
-            <div class="pub__authors">Tao Gong*, Chengqi Lyu*, <span class="author-me">Shilong Zhang*</span>, Yudong Wang*, Miao Zheng*, Qian
-              Zhao*, Kuikun Liu*, Wenwei Zhang*, Ping Luo, Kai Chen</div>
-            <div class="pub__meta"><em>(* random order)</em></div>
-            <p class="pub__desc">We present a vision and language model named MultiModal-GPT to conduct multi-round
-              dialogue with humans.</p>
-            <div class="pub__links">
-              <a class="chip" href="https://arxiv.org/abs/2305.04790">Paper</a>
-              <a class="chip" href="https://github.com/open-mmlab/Multimodal-GPT">Code</a>
-            </div>
-          </div>
-        </article>
-
-        <article class="pub">
-          <a class="pub__thumb" href="https://arxiv.org/abs/2303.12776">
-            <img src="images/ddq.png" alt="DDQ-DETR thumbnail" loading="lazy" decoding="async">
-          </a>
-          <div class="pub__body">
-            <h3 class="pub__title">
-              <a href="https://arxiv.org/abs/2303.12776">[6] Dense Distinct Query for End-to-End Object Detection</a>
-            </h3>
-            <div class="pub__authors"><span class="author-me">Shilong Zhang*</span>, Xinjiang Wang*, Jiaqi Wang, Jiangmiao Pang, Chengqi Lyu,
-              Wenwei Zhang, Ping Luo, Kai Chen</div>
-            <div class="pub__meta"><em>CVPR 2023 (* Equal contribution)</em></div>
-            <p class="pub__desc">DDQ-DETR achieves 52.1 AP on MS-COCO dataset within 12 epochs using a ResNet-50
-              backbone, outperforming all existing detectors in the same setting.</p>
-            <div class="pub__links">
-              <a class="chip" href="https://arxiv.org/abs/2303.12776">Paper</a>
-              <a class="chip" href="https://github.com/jshilong/DDQ">Code</a>
-            </div>
-          </div>
-        </article>
-
-        <article class="pub">
-          <a class="pub__thumb" href="https://arxiv.org/abs/2205.05920">
-            <img src="images/grouprcnn.png" alt="Group R-CNN thumbnail" loading="lazy" decoding="async">
-          </a>
-          <div class="pub__body">
-            <h3 class="pub__title">
-              <a href="https://arxiv.org/abs/2205.05920">[7] Group R-CNN for Point-based Weakly Semi-supervised Object
-                Detection</a>
-            </h3>
-            <div class="pub__authors"><span class="author-me">Shilong Zhang*</span>, Zhuoran Yu*, Liyang Liu*, Xinjiang Wang, Aojun Zhou, Kai
-              Chen</div>
-            <div class="pub__meta"><em>CVPR 2022 (* Equal contribution)</em></div>
-            <p class="pub__desc">
-              We study the problem of weakly semi-supervised object detection with points (WSSOD-P). Group R-CNN
-              significantly outperforms the prior method Point DETR by 3.9 mAP with 5% well-labeled images.
-            </p>
-            <div class="pub__links">
-              <a class="chip" href="https://arxiv.org/abs/2205.05920">Paper</a>
-              <a class="chip" href="https://github.com/jshilong/GroupRCNN">Code</a>
-            </div>
-          </div>
-        </article>
-
-        <article class="pub">
-          <a class="pub__thumb" href="https://arxiv.org/abs/2108.00708">
-            <img src="images/pruning.png" alt="Group Fisher Pruning thumbnail" loading="lazy" decoding="async">
-          </a>
-          <div class="pub__body">
-            <h3 class="pub__title">
-              <a href="https://arxiv.org/abs/2108.00708">[8] Group Fisher Pruning for Practical Network Compression</a>
-            </h3>
-            <div class="pub__authors">Liyang Liu, <span class="author-me">Shilong Zhang</span>, Zhanghui Kuang, Aojun Zhou, Jing-Hao Xue, Xinjiang Wang, Yimin Chen, Wenming Yang, Qingmin Liao, Wayne Zhang</div>
-            <div class="pub__meta"><em>ICML 2021</em></div>
-            <p class="pub__desc">We present a general channel pruning framework for complicated structures.</p>
-            <div class="pub__links">
-              <a class="chip" href="https://arxiv.org/abs/2108.00708">Paper</a>
-              <a class="chip" href="https://github.com/jshilong/FisherPruning.git">Code</a>
-            </div>
-          </div>
-        </article>
-
-        <article class="pub">
-          <a class="pub__thumb" href="https://arxiv.org/abs/2005.03101">
-            <img src="images/sepc.png" alt="SEPC thumbnail" loading="lazy" decoding="async">
-          </a>
-          <div class="pub__body">
-            <h3 class="pub__title">
-              <a href="https://arxiv.org/abs/2005.03101">[9] Scale-equalizing Pyramid Convolution for Object
-                Detection</a>
-            </h3>
-            <div class="pub__authors">Xinjiang Wang*, <span class="author-me">Shilong Zhang*</span>, Zhuoran Yu, Litong Feng, Wayne Zhang</div>
-            <div class="pub__meta"><em>CVPR 2020 (* Equal contribution)</em></div>
-            <p class="pub__desc">
-              We proposed a scale-equalizing pyramid convolution method that relaxes the discrepancy between the feature
-              pyramid and the gaussian pyramid. The module boosts the performance about 3.5 mAP in single-stage object
-              detection with negligible inference time.
-            </p>
-            <div class="pub__links">
-              <a class="chip" href="https://arxiv.org/abs/2005.03101">Paper</a>
-              <a class="chip" href="https://github.com/jshilong/SEPC">Code</a>
-            </div>
-          </div>
-        </article>
-      </div>
-    </section>
-
-    <section class="section" id="collaborative-work">
-      <div class="section__header">
-        <h2 class="section__title">Selected Collaborative Work</h2>
-        <div class="section__note">Representative co-authored systems and papers</div>
-      </div>
-
-      <div class="collabList">
-        <article class="collab" data-s2paper="bcfecb076763b8cff41bc8719e7486fe759d6e62" data-citations="72">
-          <div class="collab__year">2025</div>
-          <div class="collab__body">
-            <h3 class="collab__title">
-              <a href="https://arxiv.org/abs/2502.04896">Goku: Flow Based Video Generative Foundation Models</a>
-            </h3>
-            <p class="collab__desc">
-              Joint image-video foundation model work for flow-based generation, with strong public code visibility and
-              broad community uptake.
-            </p>
-            <div class="collab__links">
-              <a class="chip" href="https://github.com/Saiyan-World/goku">Code</a>
-              <a class="chip" href="https://saiyan-world.github.io/goku/">Page</a>
-            </div>
-          </div>
-        </article>
-
-        <article class="collab" data-s2paper="b15e6e2b1d81bc110f8fc98c3caf2e25e2512539" data-citations="730">
-          <div class="collab__year">2024</div>
-          <div class="collab__body">
-            <h3 class="collab__title">
-              <a href="https://arxiv.org/abs/2406.06525">Autoregressive Model Beats Diffusion: Llama for Scalable Image
-                Generation</a>
-            </h3>
-            <p class="collab__desc">
-              A high-impact open-source direction showing that next-token prediction can scale to image generation with
-              the right tokenizer and architecture choices.
-            </p>
-            <div class="collab__links">
-              <a class="chip" href="https://github.com/FoundationVision/LlamaGen">Code</a>
-            </div>
-          </div>
-        </article>
-
-        <article class="collab" data-s2paper="ee7f769a73a533a871cd5fd9cd566d96a3f09107" data-citations="70">
-          <div class="collab__year">2024</div>
-          <div class="collab__body">
-            <h3 class="collab__title">
-              <a href="https://arxiv.org/abs/2406.07547">Zero-shot Image Editing with Reference Imitation</a>
-            </h3>
-            <p class="collab__desc">
-              MimicBrush reframes image editing around visual references, letting users specify style, identity, and
-              local detail through examples rather than text alone.
-            </p>
-            <div class="collab__links">
-              <a class="chip" href="https://github.com/ali-vilab/MimicBrush">Code</a>
-            </div>
-          </div>
-        </article>
-
-        <article class="collab" data-s2paper="619a3118436ae6d1d435c6322e855eefb41d1ffc" data-citations="57">
-          <div class="collab__year">2025</div>
-          <div class="collab__body">
-            <h3 class="collab__title">
-              <a href="https://arxiv.org/abs/2504.07963">PixelFlow: Pixel-Space Generative Models with Flow</a>
-            </h3>
-            <p class="collab__desc">
-              Pixel-space flow generation that questions whether image generation must depend on a pretrained VAE
-              bottleneck.
-            </p>
-            <div class="collab__links">
-              <a class="chip" href="https://github.com/ShoufaChen/PixelFlow">Code</a>
-            </div>
-          </div>
-        </article>
-
-        <article class="collab" data-s2paper="72d702e7e290c5a3223c42342e54f1b3e5dbf526" data-citations="34">
-          <div class="collab__year">2025</div>
-          <div class="collab__body">
-            <h3 class="collab__title">
-              <a href="https://arxiv.org/abs/2509.25050">Advantage Weighted Matching: Aligning RL with Pretraining in
-                Diffusion Models</a>
-            </h3>
-            <p class="collab__desc">
-              Aligns diffusion post-training with the pretraining objective through advantage-weighted matching rather
-              than a separate noisy RL objective.
-            </p>
-            <div class="collab__links">
-              <a class="chip" href="https://github.com/scxue/advantage_weighted_matching">Code</a>
-            </div>
-          </div>
-        </article>
-
-        <article class="collab" data-s2paper="99ccc15094b9438448668d136d90a12e0c9443e1" data-citations="811">
-          <div class="collab__year">2022</div>
-          <div class="collab__body">
-            <h3 class="collab__title">
-              <a href="https://arxiv.org/abs/2212.07784">RTMDet: An Empirical Study of Designing Real-Time Object
-                Detectors</a>
-            </h3>
-            <p class="collab__desc">
-              Practical real-time detection system study across architecture, label assignment, augmentation,
-              optimization, and task extensions.
-            </p>
-            <div class="collab__links">
-              <a class="chip" href="https://github.com/open-mmlab/mmdetection/tree/main/configs/rtmdet"
-                data-ghrepo="open-mmlab/mmdetection">Code</a>
-            </div>
-          </div>
-        </article>
-
-        <article class="collab" data-s2paper="9ad6f2141a433ba13a43272d666dc3609198dd91" data-citations="108">
-          <div class="collab__year">2023</div>
-          <div class="collab__body">
-            <h3 class="collab__title">
-              <a href="https://openaccess.thecvf.com/content/CVPR2023/html/Wang_Consistent-Teacher_Towards_Reducing_Inconsistent_Pseudo-Targets_in_Semi-Supervised_Object_Detection_CVPR_2023_paper.html">Consistent-Teacher:
-                Towards Reducing Inconsistent Pseudo-Targets in Semi-Supervised Object Detection</a>
-            </h3>
-            <p class="collab__desc">
-              CVPR Highlight work on stabilizing pseudo supervision in semi-supervised object detection.
-            </p>
-            <div class="collab__links">
-              <a class="chip" href="https://github.com/Adamdad/ConsistentTeacher">Code</a>
-            </div>
-          </div>
-        </article>
-      </div>
-    </section>
-
-    <footer class="footer">
+  <footer class="footer">
+    <div class="wrap">
       <div class="clustrmapsWrap" id="clustrmapsWrap">
         <div class="footer__left" id="clustrmapsMount" aria-hidden="true">
           <script type="text/javascript" id="clustrmaps"
@@ -546,8 +683,14 @@
           </div>
         </div>
       </div>
-    </footer>
-  </main>
+      <div class="footer__bar">
+        <span>&copy; <span id="year">2026</span> Shilong Zhang</span>
+        <a href="#top">Back to top</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/site.js?v=20261001-3"></script>
 
   <script>
     // Show GitHub stars on "Code" links and selected GitHub repos (data-ghrepo).
@@ -602,30 +745,42 @@
         return v;
       }
 
+      // Several links point at the same repo; share one request per repo (the API allows 60/hour per visitor).
+      const requests = new Map();
+      function getStarsOnce(repo) {
+        if (!requests.has(repo)) requests.set(repo, getStars(repo));
+        return requests.get(repo);
+      }
+
       links.forEach((a) => {
         const repo = (a.getAttribute('data-ghrepo') || '').trim() || parseRepo(a.href);
         if (!repo) return;
         const base = (a.textContent || 'Code').replace(/\s*★.*$/, '').trim();
         a.classList.add('ghstars');
-        a.innerHTML = `${base} <span class="ghstars__badge" aria-label="GitHub stars"><span class="ghstars__icon" aria-hidden="true">★</span><span class="ghstars__count">—</span></span>`;
-        getStars(repo).then((v) => {
+        a.innerHTML = `${base}<span class="ghstars__badge" aria-label="GitHub stars"><span class="ghstars__icon" aria-hidden="true">★</span><span class="ghstars__count">—</span></span>`;
+        getStarsOnce(repo).then((v) => {
           if (typeof v !== 'number') return;
           const c = a.querySelector('.ghstars__count');
           if (c) c.textContent = formatStars(v);
           a.title = `${repo} stars: ${v}`;
         }).catch(() => {
           a.classList.remove('ghstars');
-          a.textContent = base; // fallback
+          const badge = a.querySelector('.ghstars__badge');
+          if (!badge) return;
+          const label = badge.previousSibling;
+          badge.remove();
+          if (label && label.nodeType === Node.TEXT_NODE) label.textContent = label.textContent.replace(/\s+$/, '');
         });
       });
     })();
   </script>
 
   <script>
-    // Show citation counts next to each paper's Code link (via Semantic Scholar).
+    // Show citation counts at the end of each paper's link row, via Semantic Scholar.
     (function () {
       const papers = Array.from(document.querySelectorAll('#publications .pub, #collaborative-work .collab'));
       if (!papers.length) return;
+      const CACHE_MS = 24 * 3600 * 1000;
 
       function parseArxivId(href) {
         try {
@@ -656,59 +811,80 @@
         return arxivId ? `ARXIV:${arxivId}` : null;
       }
 
-      async function getCites(paperKey) {
-        const key = `sscites:${paperKey}`;
-        const now = Date.now();
+      function readCache(paperKey) {
         try {
-          const cached = JSON.parse(localStorage.getItem(key) || 'null');
-          if (cached && typeof cached.v === 'number' && typeof cached.t === 'number' && (now - cached.t) < 24 * 3600 * 1000) {
+          const cached = JSON.parse(localStorage.getItem(`sscites:${paperKey}`) || 'null');
+          if (cached && typeof cached.v === 'number' && typeof cached.t === 'number' && (Date.now() - cached.t) < CACHE_MS) {
             return cached.v;
           }
         } catch { }
-
-        const paperPath = paperKey.startsWith('ARXIV:')
-          ? `ARXIV:${encodeURIComponent(paperKey.slice('ARXIV:'.length))}`
-          : encodeURIComponent(paperKey);
-        const url = `https://api.semanticscholar.org/graph/v1/paper/${paperPath}?fields=citationCount`;
-        const res = await fetch(url, { headers: { 'Accept': 'application/json' }, cache: 'no-store' });
-        if (!res.ok) throw new Error('Semantic Scholar API failed');
-        const data = await res.json();
-        const v = typeof data.citationCount === 'number' ? data.citationCount : null;
-        if (typeof v === 'number') {
-          try { localStorage.setItem(key, JSON.stringify({ v, t: now })); } catch { }
-        }
-        return v;
+        return null;
       }
 
+      function writeCache(paperKey, v) {
+        try { localStorage.setItem(`sscites:${paperKey}`, JSON.stringify({ v, t: Date.now() })); } catch { }
+      }
+
+      // One batch request for all papers: the unauthenticated API shares a small global rate limit,
+      // so a burst of per-paper requests is usually rejected (HTTP 429).
+      async function fetchCites(paperKeys) {
+        const res = await fetch('https://api.semanticscholar.org/graph/v1/paper/batch?fields=citationCount', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ ids: paperKeys }),
+          cache: 'no-store'
+        });
+        if (!res.ok) throw new Error('Semantic Scholar API failed');
+        const data = await res.json();
+        const counts = new Map();
+        paperKeys.forEach((key, i) => {
+          const v = Array.isArray(data) && data[i] ? data[i].citationCount : null;
+          if (typeof v === 'number') counts.set(key, v);
+        });
+        return counts;
+      }
+
+      function showCount(entry, v) {
+        entry.count.textContent = formatCount(v);
+        entry.badge.title = `Citations (Semantic Scholar): ${v}`;
+      }
+
+      const pending = [];
       papers.forEach((paper) => {
-        const codeLink = paper.querySelector('.pub__links a.chip[href*="github.com/"], .collab__links a.chip[href*="github.com/"]');
+        const row = paper.querySelector('.pub__links, .collab__links');
         const paperKey = getPaperKey(paper);
-        if (!codeLink || !paperKey) return;
-        const fallbackCites = Number(paper.getAttribute('data-citations'));
-        const hasFallbackCites = Number.isFinite(fallbackCites) && fallbackCites >= 0;
+        if (!row || !paperKey || row.querySelector('.cites')) return;
 
-        // Add placeholder right after stars badge (or at end of link).
-        if (!codeLink.querySelector('.ghcite__badge')) {
-          const holder = document.createElement('span');
-          holder.className = 'ghcite__badge';
-          holder.innerHTML = ` · <span class="ghcite__label">Cite</span> <span class="ghcite__count">${hasFallbackCites ? formatCount(fallbackCites) : '—'}</span>`;
-          codeLink.appendChild(holder);
-        }
-        if (hasFallbackCites && !codeLink.title.includes('citations:')) {
-          const prev = codeLink.title ? `${codeLink.title} | ` : '';
-          codeLink.title = `${prev}citations: ${fallbackCites}`;
-        }
+        const raw = paper.getAttribute('data-citations');
+        const fallback = raw === null || raw.trim() === '' ? NaN : Number(raw);
+        const cached = readCache(paperKey);
+        const initial = cached !== null ? cached : (Number.isFinite(fallback) && fallback >= 0 ? fallback : null);
 
-        getCites(paperKey).then((v) => {
-          if (typeof v !== 'number') return;
-          const c = codeLink.querySelector('.ghcite__count');
-          if (c) c.textContent = formatCount(v);
-          const prev = codeLink.title ? `${codeLink.title} | ` : '';
-          codeLink.title = `${prev}citations: ${v}`;
-        }).catch(() => {
-          if (hasFallbackCites) return;
-          const b = codeLink.querySelector('.ghcite__badge');
-          if (b) b.remove();
+        const badge = document.createElement('span');
+        badge.className = 'cites';
+        badge.innerHTML = 'Cited by <span class="cites__count">—</span>';
+        row.appendChild(badge);
+
+        const entry = { paperKey, badge, count: badge.querySelector('.cites__count'), hasValue: initial !== null };
+        if (initial !== null) showCount(entry, initial);
+        if (cached === null) pending.push(entry);
+      });
+
+      if (!pending.length) return;
+      const keys = Array.from(new Set(pending.map((e) => e.paperKey)));
+      fetchCites(keys).then((counts) => {
+        pending.forEach((e) => {
+          const v = counts.get(e.paperKey);
+          if (typeof v === 'number') {
+            writeCache(e.paperKey, v);
+            showCount(e, v);
+          } else if (!e.hasValue) {
+            e.badge.remove();
+          }
+        });
+      }).catch(() => {
+        pending.forEach((e) => {
+          if (!e.hasValue) e.badge.remove();
         });
       });
     })();
@@ -812,9 +988,9 @@
     })();
   </script>
 
-    <script xml:space="preserve" language="JavaScript">
-        hideallbibs();
-    </script>
+  <script xml:space="preserve" language="JavaScript">
+    hideallbibs();
+  </script>
 </body>
 
 </html>
